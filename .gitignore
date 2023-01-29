@@ -15,9 +15,11 @@ Maps/Custom/*.zip
 Maps/Custom/*.map
 Maps/Custom/*.png
 
+Map Editor/aqrit.cfg
 Map Editor/FinalSun.ini
 Map Editor/finalsunlog.txt
 Map Editor/*.log
+
 
 Client/
 QM/
@@ -53,3 +55,5 @@ Movies02.mix
 Movies03.mix
 
 Language.dll
+
+INI/battle2.ini
