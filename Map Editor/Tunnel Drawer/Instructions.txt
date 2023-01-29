@@ -1,0 +1,35 @@
+INSTRUCTIONS
+
+With this program you can easily generate tunnel codes for Tiberian Sun and Red Alert 2 maps. The program's interface is divided into three sections: The options section at the top, the grid section at the middle and the output section at the bottom.
+
+OPTIONS SECTION
+
+First 4 input fields: X and Y coordinates of the red and orange tunnel entrances' middle cells. Press ENTER to apply changes. Values can be between 1-1024. Notice that the coordinates given by the Final Sun and Final Alert map editors are in reversed order, here they are not!
+Orientation buttons: Click to change the orientation of the tunnel entrances.
+Mirror X/Y button: Changes the entered X values to Y values and vice versa.
+Index input field: The index value of the first generated tunnel. Press ENTER to apply changes. Values can be between 0-121.
+
+GRID SECTION
+
+This is where you create your tunnels. Click on one of the tunnel entrances to begin drawing a tunnel. You can draw 3 tunnels, each starting from a different cell of the entrance. Click the grid to add tunnel nodes. Each tunnel must end at a different cell at the other entrance.
+
+Red cells: The first tunnel entrance. This color will also indicate cells that exceed the tunnel max length of 99.
+Orange cells: The second tunnel entrance.
+Green cells: These show the tunnel's shape. The middle tunnel is drawn in slightly darker color.
+
+Esc: Remove the current tunnel and stop drawing.
+Backspace: Remove last entered node.
+Arrow keys: Move the view 1 cell to the desired direction.
+Shift + arrow keys: Move the view 5 cells to the desired direction.
+Spacebar: Center the view between the entrances.
+Q & E: Center the view at the entrances.
+C: Clear all tunnels.
+F: Force the tunnel to end. This will only generate the tunnel in one direction, and without ending coordinates.
+T: Toggle the distance text mode/visibility.
+
+OUTPUT SECTION
+
+The codes for your finished tunnels will be generated at this section. Copy and paste them somewhere in your map file using a text editor.
+
+-----------------------
+Program created by Q45.
