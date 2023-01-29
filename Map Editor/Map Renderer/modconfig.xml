@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <ModConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name>Tiberian Sun Client</Name>
+  <Name>Tiberian Sun: Rubicon</Name>
   <Engine>Firestorm</Engine>
   <Directories>
-    <string>..\INI</string>
-    <string>..\MIX</string>
+    <string>..\..\INI</string>
+    <string>..\..\MIX</string>
   </Directories>
   <ExtraMixes>
     <string>tstunnelwithtop.mix</string>
@@ -33,6 +33,18 @@
       <IsoPaletteName>isosno.pal</IsoPaletteName>
       <UnitPaletteName>unitsno.pal</UnitPaletteName>
       <OverlayPaletteName>snow.pal</OverlayPaletteName>
+    </TheaterSettings>
+    <TheaterSettings>
+      <Type>Desert</Type>
+      <Mixes>
+        <string>isodes.mix</string>
+      </Mixes>
+      <TheaterIni>desert.ini</TheaterIni>
+      <Extension>.des</Extension>
+      <NewTheaterChar>68</NewTheaterChar>
+      <IsoPaletteName>isodes.pal</IsoPaletteName>
+      <UnitPaletteName>unitdes.pal</UnitPaletteName>
+      <OverlayPaletteName>desert.pal</OverlayPaletteName>
     </TheaterSettings>
   </Theaters>
   <ExtraOptions>
