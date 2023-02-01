@@ -1,0 +1,1189 @@
+# Tiberian Sun: Rubicon Changelog
+
+All changes and assets, except for voxel models, were made by Crimsonum unless stated otherwise.
+See changelog_tsclient.txt for changes made specifically to the CnCNet TS client package.
+
+## Table of Contents
+1. Developer Version 0.1
+	1. Gameplay
+		1. Generic
+		2. GDI
+		3. Nod
+		4. CABAL
+		5. Neutral
+		6. AI
+		7. Terrain
+	2. Visuals
+	3. Audio
+	4. Campaign
+	5. Multiplayer
+	6. Map Editor
+	7. Client
+	8. Miscellaneous
+2. Definitions (A Guide For Newbies)
+
+
+## Developer Version 0.1:
+
+### Gameplay
+
+**Legend**  
+(+) New/buffed/fixed feature  
+(-) Removed/nerfed feature  
+(±) Neutral change
+
+#### Generic
+
+- (+) **New Game Modes**: **Classic** and **Advanced**. Play Classic for a more familiar TS/FS experience, or see what the future holds in Advanced mode:
+	- CABAL as a playable faction
+	- Nod Flamedancers, an all-female caste of warriors armed with deadly flamethrowers
+	- Obelisk of Light can be upgraded with *Dark Prism* for anti-air capability
+	- Nod no longer uses cyborg units
+- (±) Reordered techno lists based on tier, faction, and class. This affects the order objects appear in on the sidebar.
+- (+) Enabled the option for units to gain 20% increase in sight range by ranking up (`VeteranSight` changed from 0 to 1.2)
+- (+) Units repair 50% faster on Service Depots (`URepairRate` decreased from 0.016 to 0.008)
+- (+) Tiberium heals infantry twice as fast and vehicles four times slower (`TiberiumHeal` increased from 0.01 to 0.04, `IRepairStep` incr. from 1 to 8, `IRepairRate` incr. from .001 to .008)
+- (+) Default build speed increased by 12.5% (`BuildSpeed` dec. from 0.8 to 0.7)
+- (-) Building (de)construction animations last ~17% longer (`BuildupTime` increased from 0.06 to 0.07)
+- (+) Harvesters unload faster (`HarvesterDumpRate` set to 0.005)
+- (+) Harvesters scoop up Tiberium twice as fast (`HarvesterLoadRate` dec. from 2 to 1)
+- (+) When destroyed or sold, buildings release twice as many infantry (`SurvivorRate` increased from 0.1 to 0.2)
+- Ion Storm defaults tweaked:
+	- (±) Warning time increased from 31 to 46 frames
+	- (-) Lighting randomness increased from 90% to 95%
+	- (-) Lighting damage decreased from 500 to 250
+	- (+) Duration increased from 120 to 360 frames
+	- (+) Lightning bolt damage spread increased from 6 to 20
+	- (-) Lightning bolt effectiveness against concrete armor decreased from 100% to 10%
+	- (-) Lighting bolts can no longer deform the ground by default
+- (+) Successive factories now increase build rate by 50% by default (was ~18% and only through the client multiplayer option)
+- (+) Tracked vehicles move uphill 60% faster (`TrackedUphill` increased from 0.5 to 0.8)
+- (+) Tracked vehicles move downhill ~9% faster (`TrackedDownhill` increased from 1.1 to 1.2)
+- (+) Wheeled vehicles move uphill 30% faster (`TrackedUphill` increased from 0.5 to 0.6)
+- (+) Wheeled vehicles move downhill ~17% faster (`TrackedDownhill` increased from 1.2 to 1.4)
+- (+) Burning trees have a higher chance at igniting adjacent trees (`TreeFlammability` increased from 0.05 to 0.1)
+- (+) Players may queue up to 30 units at a time
+- Spotlight defaults tweaked:
+	- (+) Spotlight radius increased by 25% (`SpotlightMovementRadius` incr. from 2000 to 2500, `SpotlightLocationRadius` from 1000 to 1250)
+	- (-) Spotlight travel speed decreased from 0.015 to 0.005
+	- (-) Spotlight acceleration rate decreased from 0.0025 to 0.0015
+- (-) Removed the Hunter-Seeker superweapon
+- (+) Fixed default threat evaluation values
+- Fire:
+	- (+) Large fires now create adjacent, smaller fires
+	- (+) Damage spread increased from 8 to 12
+	- (+) Can ignite blue Tiberium
+	- (-) Effectiveness against none armor decreased from 600% to 90%
+	- (-) Effectiveness against wood armor decreased from 148% to 100%
+	- (-) Effectiveness against prone infantry decreased from 600% to 150%
+- (-) Destroyable cliffs now have only 10% chance of collapsing when hit (`CollapseChance` decreased from 100% to 10%)
+- (±) Harvesters scan for Tiberium in a 25% smaller area, to mitigate the chance of AI harvesters from straying into nearby enemy bases (`TiberiumFarScan` decreased from 48 to 36)
+- (-) Removed armor and rate-of-fire bonuses/handicaps from easy and hard difficulty modes
+- (+) Fixed missing or incorrect `Owner` tags on certain deployed vehicles.
+- (+) New generic unit: *Mobile Expansion Vehicle* (MEV), a light support vehicle that can deploy into an immobile base expansion node
+- (-) Removed Mobile War Factories, made obsolete by MEVs
+- (+) Civilian vehicles no longer cost anything, to prevent players from farming veterancy points by killing them
+- (+) Aircraft reload 50% faster (`ReloadRate` decreased from 0.5 to 0.25)
+- (±) Helicopter-esque aircraft (i.e. ORCA Fighter, Harpy) no longer switch positions between shots unless necessary (disabled `CurleyShuffle`).
+- (±) Aircraft flight level increased by ~67% (`FlightLevel` incr. from 600 to 1000). This is mostly a visual change, as aircraft and anti-air weapon ranges have been increased accordingly.
+	- (+) GDI SAM Launcher and Nod SAM Site target acquirement range increased from 10 to 15 cells. SAM missile range remains unchanged (15 cells).
+- (+) All aircraft and subterranean units can now move into shrouded areas
+- (-) Subterranean units now burrow slower
+- (+) Added an override to the default slowdown distance for subterranean units in an effort to improve their responsiveness when moving on the surface
+- (+) Cluster weapons now spread the clusters out in a circle, not a ring
+- Small anti-air missiles (used by Rocket Infantry, Interceptor, Component Tower SAM Launcher, Stealth Tank, Mammoth Tank, and Mammoth Mk. II):
+	- (+) Rate-of-turn increased from 5 to 8
+	- (+) Acceleration rate increased from 3 to 5
+- Large SAM warhead (used by Component Tower SAM Launcher, Nod SAM Site, Mammoth Tank, and Mammoth Mk. II):
+	- (+) Damage spread increased from 3 to 10
+	- (-) Effectiveness against heavy armor decreased from 100% to 60%
+	- (-) Effectiveness against concrete armor decreased from 100% to 30%
+	- (-) Effectiveness against jumpjets decreased from 100% to 70%
+- (+) Tiberium Riparium (green Tiberium) growth and spread rate increased by approximately 63% (`Growth`/`Spread` delay decreased from 2200 to 1350 frames)
+- (+) Tiberium Viniferum (blue Tiberium) growth and spread rate increased by approximately 455% (`Growth`/`Spread` delay decreased from 10000 to 2200).
+- (+) Tiberium Viniferum growth and spread probability increased by 20% (from 5% to 6% per growth/spread check)
+- (+) Restored and improved an unused feature where Viniferum chain reaction ejects crystal shards that can grow into more Viniferum.
+- (+) Reworked the practically unused Tiberium Arboreum into large monoliths that can passively spread Viniferum. The monoliths can also explode violently into a shower of Viniferum shards. New Arboreum monoliths are sometimes created from Viniferum chain reactions.
+- Veinhole:
+	- (+) Veins now grow and spread ~33% faster (`VeinholeGrowthRate` decreased from 300 to 200)
+	- (+) Maximum vein area increased by 50% (`MaxVeinholeGrowth` increased from 2000 to 3000)
+	- (+) Armor upgraded from none to wood
+	- (+) Strength increased from 1000 to 2000
+- Tiberium gas clouds:
+	- (+) Effectiveness against concrete armor increased from 0% to 10%
+	- (±) Deals less damage but more frequently
+	- (±) Affected by wind
+	- (-) Effectiveness against wood armor decreased from 150% to 100%
+- (+) Fog of War grows faster (`FogRate` decr. from 0.5 to 0.12)
+- (-) All defense buildings now require power to operate
+- (+) Mitigated the issue where missiles and other homing projectiles explode prematurely when chasing target (`Arm` delay increased, in most cases from 2 to 64 frames)
+- (+) Slightly increased the accuracy of ballistic projectiles (disabled `Bouncy` but left `Elasticity=0`)
+- Construction Yard:
+	- (+) Strength increased from 1000 to 2000
+	- (+) Produces a small amount of power, to power a single Barracks, Hand of Nod or Biomech Facility (CABAL Barracks)
+	- (-) Armor changed from heavy to wood
+- (+) Barracks and Hand of Nod are now immediately available from a Construction Yard without requiring a Power Plant first
+- Tiberium Refinery:
+	- (+) Tiberium storage capacity increased from 80 to 100 (roughly 3.5 Harvester loads)
+	- (+) Strength increased from 900 to 1300
+	- (-) Armor changed from heavy to wood
+- Tiberium Silos are now more valuable, the main reason is to discourage base-creeping with them:
+	- (+) Storage increased from 60 to 140 (equal to 5 full Harvester loads)
+	- (-) Cost increased from 150 to 250
+- EMP Cannon:
+	- (-) No longer available for GDI
+	- (-) Can be captured
+	- (-) Attracts lightning during ion storms
+- Pavement:
+	- (+) Can be built directly from the Construction Yard
+	- (+) Tech level requirement decreased from 6 to 1
+- Light Post:
+	- (+) Now available for construction when dynamic map lighting is enabled
+	- (+) Cost decreased from 200 to 100
+	- (-) Strength decreased from 600 to 300
+	- (-) No longer expands build radius
+	- (-) Consumes 2 power units
+	- (-) Attracts lightning during ion storms
+- Sandbags:
+	- (+) Now available for construction at tech level 2
+	- (+) Cost decreased from 125 to 60
+	- (-) Strength decreased from 250 to 100
+- Concrete Wall:
+	- (+) Cost decreased from 250 to 125
+	- (+) Strength increased from 225 to 300
+- Gates:
+	- (+) Cost decreased from 250 to 125
+	- (+) Armor upgraded from heavy to concrete
+- Light Tower:
+	- (+) Sight range increased from 0 to 4
+	- (-) Requires power to operate
+	- (-) No longer expands build radius
+- (+) Ammo Crates now explode violently
+- Technician:
+	- (+) Removed the buggy reload mechanism and tweaked the weapon rate-of-fire accordingly
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased firepower, rate-of-fire, sight range, and heals itself when elite
+- Engineer:
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased sight range, heals itself, and scatters automatically when elite
+- Harvester:
+	- (+) Speed increased from 5 to 6
+	- (+) Gains increased speed and sight range when veteran
+	- (+) Gains increased strength when elite
+	- (+) Deceleration rate decreased from 0.002 to 0.001 (lower means faster)
+	- (-) Acceleration rate decreased from 0.03 to 0.02 (lower means slower)
+- MCV:
+	- (-) Rate-of-turn decreased from 5 to 3
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased sight range and repairs itself when elite
+	- (-) Acceleration rate decreased from 0.03 to 0.01
+- Mobile Sensor Array:
+	- (±) Exclusive to GDI
+	- (+) Gains increased strength, speed (when mobile), and sight range when veteran
+	- (+) Repairs itself and reveals adjacent cloaked objects (in mobile mode) when elite
+	- Mobile:
+		- (-) Acceleration rate decreased from 0.03 to 0.02
+		- (-) Sight range decreased from 10 to 6 cells
+	- Deployed:
+		- (+) Sight range increased from 8 to 10 cells
+		- (+) Now has a chance to eject a survivor when destroyed
+		- (-) Attracts lightning during ion storms
+- Limpet Drone:
+	- (±) Exclusive to Nod
+	- (+) Doubles as a low-range sensor when deployed
+	- (+) Cost decreased from 550 to 350
+	- (+) Gains increased strength, speed (when mobile), and sight range when veteran
+	- (+) Repairs itself and reveals adjacent cloaked objects when elite
+	- (+) Cloaking speed increased 7-fold, from 7 to 1 (lower means faster)
+	- (±) Can be deployed by giving it an attack order
+	- (±) Changed category from AFV to Support
+	- (-) Tech level requirement increased from 3 to 6 (same tech level that Sensor Arrays require)
+	- (-) Range decreased from 2 to 1.98 cells so it can't shoot over walls
+- (+) Invisible light sources no longer occupy build space and cannot be EMP'd or destroyed
+- Zeroed out the probability of gaining obsolete powerups from goodie crates. They default to money bonus, thus the chance of getting money from a crate was much higher than indicated.
+
+#### GDI
+
+- (±) Drop-Pods now spawn a fixed amount of infantry (6) instead of a random amount (from 5 to 8)
+- (+) Drop-Pod weapon damage reverted from 1 to 50
+- (+) Ion Cannon now deals damage over area. Due to engine limitations, units killed by this area damage may turn into Visceroids.
+- (+) Firestorm Defense lasts three times longer (`ChargeToDrainRatio` increased from 0.333 to 1)
+- (-) Increased the cost of all upgrades by 10% to account for the ability to instantly repair the parent building
+- (+) Restored the cut Dropship Bay building as a special vehicle production structure
+	- (-) Juggernauts and Mammoth Mk. II can now only be built from the Dropship Bay
+- War Factory:
+	- (±) Renamed Weapons Factory
+	- (+) Strength increased from 1000 to 1500
+	- (±) Armor changed from heavy to wood
+- Radar:
+	- (±) Renamed Communications Center
+	- (±) Replaces the Upgrade Center; all superweapon upgrades are now placed on the Comm. Center instead
+	- (-) Attracts lightning during ion storms
+- Technology Center:
+	- (+) Provides a steady stream of money – 100 credits every 8 seconds (at 30 FPS) – to discourage players from selling it
+	- (+) Strength increased from 500 to 750
+	- (+) Can be turned off to conserve power, but will not produce cash when disabled
+	- (-) Cost increased from 1500 to 2000, to slow tech-rushing
+	- (-) Only one can be built at a time
+	- (-) Attracts lightning during ion storms
+- Firestorm Generator:
+	- (+) Strength increased from 800 to 1200
+	- (±) Armor changed from heavy to wood
+	- (-) Attracts lightning during ion storms
+- Firestorm Wall:
+	- (+) Cost decreased from 250 to 200
+	- (-) Attracts lightning during ion storms
+- Drop Pod Node:
+	- (±) Renamed Drop-Pod Uplink
+	- (-) Power requirement increased from 20 to 75
+- (-) Removed the Seeker Control upgrade
+- (-) Ion Cannon Uplink power requirement increased from 100 to 150
+- (-) Component Tower cost increased from 200 to 300
+- Vulcan Cannon:
+	- (+) Damage increased from 18 to 26
+	- (-) Cost increased from 150 to 200 (+10%)
+- RPG Upgrade:
+	- (±) Renamed RPG Launcher
+	- (+) Cost decreased from 600 to 500 (+10%)
+	- (-) Attracts lightning during ion storms
+	- (-) Decreased the chance of the RPG snapping at target
+	- (+) Damage spread increased from 3 to 8
+	- (-) Effectiveness against wood armor decreased from 75% to 70%
+	- (-) Effectiveness against light armor decreased from 90% to 80%
+	- (-) Effectiveness against concrete armor decreased from 70% to 65%
+	- (-) Effectiveness against prone infantry decreased from 100% to 60%
+- SAM Upgrade:
+	- (±) Renamed SAM Launcher
+	- (+) Cost decreased from 300 to 200 (+10%)
+	- (+) Damage increased from 33 to 48, split into two missiles
+	- (+) Max. missile speed increased from 30 to 40
+	- (+) Missile rate-of-turn increased from 5 to 8
+	- (-) Rate-of-fire decreased by ~37% (ROF incr. from 50 to 80, including the delay from burst)
+- Light Infantry:
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased weapon range and heals itself when elite
+	- (+) Elite rate-of-fire increased by ~25% (ROF decr. from 20 to ~16)
+	- (-) Elite damage decreased from 15 to 12
+- Disc Thrower:
+	- (+) Rate-of-fire increased to pre-Firestorm value (ROF decr. from 80 to 60)
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, and weapon range and heals itself when elite
+	- (±) Does ~21% more collateral damage when exploding on death (CollateralDamageCoefficient incr. from 0.33 to 0.4)
+	- (+) Damage spread increased from 4 to 8
+	- (-) Damage decreased from 40 to 35
+	- (-) Nominal range decreased from 4.5 to 3.75 cells
+- Medic:
+	- (+) Cost decreased from 600 to 400
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, healing range, and scatters automatically when elite
+	- (-) Strength decreased from 125 to 120
+	- (-) Range decreased from 2.83 to 1.98 cells (so he can't heal across walls)
+- Jumpjet Infantry:
+	- (+) Immunity to veins
+	- (+) Immunity to webs
+	- (+) Strength increased from 120 to 160
+	- (+) Flight speed increased from 14 to 24
+	- (+) Climb speed increased from 5 to 8
+	- (+) Acceleration increased from 2 to 3
+	- (+) Turn rate increased from 4 to 5
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, and weapon range, heals itself and scatters automatically when elite
+	- (±) Wobbling adjusted to the new speed settings (`WobblesPerSecond` incr. from 0.15 to 0.30, `WobbleDeviation` decr. from 40 to 30). This is mostly a visual change, but also affects the jumpjet's responsiveness.
+	- (+) Rate-of-fire increased by ~5% (ROF decr. from 40 to 38)
+	- (-) Walk speed decreased to pre-Firestorm levels, from 8 to 5
+- Ghost Stalker:
+	- (+) No longer crushable
+	- (+) Immunity to webs
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased firepower, sight and weapon range, and scatters automatically when elite
+	- (-) Can no longer C4 deployed units like burrowed Tick Tanks
+		- (+) To compensate, railgun effectiveness against concrete armor increased from 5% to 50%
+	- (+) Damage increased from 150 to 175
+	- (±) Damage split evenly between point damage and ambient (piercing) damage (was 100% ambient)
+	- (+) Can destroy trees, walls, bridges, ice, and Tiberium
+	- (±) Armor changed from light to none
+	- (-) Railgun is susceptible to ion storms; switches to a machine gun
+	- (-) Effectiveness against prone infantry decreased from 100% to 50%
+- Wolverine:
+	- (+) Strength increased from 175 to 220
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, and weapon range, repairs itself, crushes infantry, and reveals cloaked objects when elite
+	- (±) Total damage increased from 40 to 50, split into two shots
+- Titan:
+	- (+) Strength increased from 400 to 500
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and weapon range, and repairs itself when elite
+	- (-) Cost increased from 800 to 1000
+	- (-) Rate-of-turn decreased from 5 to 4
+	- (-) Projectiles are susceptible to obstacles like cliffs or elevation
+	- (-) Now has a minimum range of 1.1 cells, to avoid an issue where the Titan shoots over adjacent targets in part due to the new projectile
+- Amphibious APC:
+	- (±) Renamed to Grizzly APC
+	- (+) Replaced GDI Barracks with any barracks as a building requirement
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased sight range and repairs itself when elite
+- Hover MLRS:
+	- (±) Renamed to Kite MLRS
+	- (±) Missiles split to anti-ground rockets (unguided) and anti-air missiles
+	- Anti-ground rockets:
+		- (+) Damage increased from 30 to 40
+		- (+) Damage spread increased from 3 to 8
+		- (+) Effectiveness against none armor (most infantry) increased from 25% to 30%
+		- (+) Effectiveness against wood armor (most buildings) increased from 65% to 75%
+		- (+) Rockets have increased speed over missiles and do not accelerate
+		- (+) Maximum range increased slightly (due to arcing behavior of rockets)
+		- (-) Rockets don't home in on targets
+		- (-) Minimum range increased from 2 to 3 cells
+		- (-) Effectiveness against light armor (light units, most defenses) decreased from 75% to 70%
+		- (-) Effectiveness against concrete armor (burrowed Tick Tanks, walls) decreased from 60% to 50%
+		- (-) Rate-of-fire decreased by ~24% (ROF incr. from 68 to 90)
+	- Anti-air missiles:
+		- (+) Damage increased from 30 to 40
+		- (+) Damage spread increased from 3 to 6
+		- (+) Effectiveness against light armor (Jumpjet infantry, light aircraft) increased from 75% to 100%
+		- (+) Max. speed increased from 30 to 50
+		- (-) Effectiveness against heavy armor decreased from 100% to 70%
+		- (-) Effectiveness against concrete armor decreased from 60% to 50%
+		- (-) Rate-of-fire decreased by ~24% (ROF incr. from 68 to 90)
+		- (-) Rate-of-turn decreased from 8 to 5
+	- (+) Speed increased from 7 to 9
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and rocket range, repairs itself and crushes infantry when elite
+	- (-) Cost increased from 900 to 1200
+	- (-) Acceleration rate decreased from 0.03 to 0.02
+	- (-) Deceleration rate increased from 0.002 to 0.03 (higher means slower)
+- Mobile EMP:
+	- (±) Renamed to EMP Tank
+	- (+) With EMP Cannon removed from GDI, the EMP Tank only requires a Comm. Center
+	- (+) Immunity to EMP
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Repairs itself when elite
+	- (-) Attracts lightning during ion storms
+- Disruptor:
+	- (+) Strength increased from 500 to 600
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased firepower, rate-of-fire, and sight range and repairs itself when elite
+	- (-) Reverted Firestorm buffs:
+		- (-) Speed decreased from 5 to 4
+		- (-) Has to accelerate/decelerate again, but with an added slowdown distance override to improve responsiveness
+	- (-) Cost increased from 1300 to 2000
+	- (-) Rate-of-turn decreased from 4 to 3
+	- (-) Rate-of-fire decreased by ~14% (ROF incr. from 120 to 140)
+	- (-) Attracts lightning during ion storms
+	- (-) Sonic wave is weakened during ion storms
+- Juggernaut:
+	- (+) Fixed category from AFV to LRFS
+	- (+) Strength increased by ~71%/50% (mobile/deployed), from 350/400 to 600
+	- (+) Gains increased strength and speed (when mobile) when veteran
+	- (+) Gains increased firepower and rate-of-fire and repairs itself when elite
+	- (+) Damage increased from 75 to 150 per shell
+		- (-) Deform threshold increased from 120 to 150 to compensate
+	- (+) Damage spread increased from 6 to 12
+	- (+) Effectiveness against none armor increased from 40% to 70%
+	- (+) Maximum range increased from 18 to 22 cells
+	- (±) Maximum shell scatter distance increased from 2.0 to 2.5
+	- (-) Requires GDI Technology Center and Dropship Bay
+	- (-) Speed decreased from 5 to 3
+	- (-) Cost increased from 975 to 2000
+	- (-) Rate-of-turn decreased from 5 to 2/3 (mobile/deployed)
+	- (-) No longer included in the starting units pool
+	- (-) Can no longer be lifted by a Carryall
+	- (-) Attracts lightning when deployed during ion storms
+	- (-) Minimum range increased from 5 to 6 cells
+	- (-) Rate-of-fire decreased by ~17% (ROF incr. from 150 to 180)
+- Mammoth Mk. II:
+	- (+) Strength increased from 1200 to 2400
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and railgun range when elite
+	- (+) Railgun range increased from 8 to 10 cells
+	- (+) Anti-air missile speed increased from 20 to 40
+	- (±) Railgun damage split evenly between ambient (piercing) and point damage (from 200/0 to 100/100), to prevent the issue where elevation would prevent any damage
+	- (±) Requires GDI Technology Center and Dropship Bay
+	- (-) Cost increased from 3000 to 5000
+	- (-) Rate-of-turn decreased from 3 to 2
+	- (-) Acceleration rate decreased from 0.03 to 0.01
+	- (-) Can no longer be lifted by a Carryall
+	- (-) Attracts lightning during ion storms
+	- (-) Railgun rate-of-fire decreased by ~18% (ROF incr. from 70 to 85)
+- ORCA Fighter:
+	- (+) Sight range increased from 2 to 7
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased firepower, sight, and radar invisibility when elite
+	- (±) Now fires multiple missiles in strafing runs
+		- (-) Ammo decreased from 5 to 2 to compensate
+	- (+) Max. missile speed increased from 30 to 40
+	- (+) Damage spread increased from 3 to 4
+- ORCA Bomber:
+	- (+) Sight range increased from 2 to 6
+	- (±) Armor changed from light to heavy
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains destructive napalm bombs, increased sight range, and radar invisibility when elite
+	- (-) Strength decreased from 260 to 210
+	- (-) Rate-of-turn decreased from 5 to 3
+	- (-) Increased the time spent attacking in order to deliver the same amount of damage as before:
+		- (+) Ammo increased from 4 to 2
+		- (-) Warhead effectiveness halved against all armor types, except concrete, which was further reduced from 100% to 25%
+	- (-) Damage spread decreased from 512 (in effect 63) to 28
+	- (-) Bombs no longer snap into targets
+- ORCA Transport:
+	- (+) Now available at tech level 9
+	- (+) Sight range increased from 2 to 6
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased sight range and radar invisibility when elite
+	- (±) Changed category from `AirPower` to `AirLift`
+	- (-) Rate-of-turn decreased from 5 to 3
+- Carryall:
+	- (+) Sight range increased from 2 to 6
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased sight range and radar invisibility when elite
+	- (±) Changed category from `AirPower` to `AirLift`
+	- (-) Cost increased from 750 to 1000
+	- (-) Speed decreased from 16 to 12
+	- (-) Rate-of-turn decreased from 5 to 3
+	- (-) Acceleration rate decreased from 0.03 to 0.01
+	- (-) Slowdown distance increased from 500 to 1000 leptons
+- Dropship:
+	- (-) Rate-of-turn decreased from 3 to 2
+- Converted Hunter-Seeker into an aircraft recon unit. Currently unavailable.
+	
+#### Nod
+
+- Multi-Missile:
+	- (±) Renamed Cluster Missile (after what EVA and CABAL call it)
+	- (+) Max. speed increased from 35 to 50
+	- (-) Acceleration rate decreased from 3 to 1
+	- (-) No longer penetrates Firestorm barrier
+	- (+) Damage spread increased from 4 to 8
+	- (-) Effectiveness against wood armor (i.e. most buildings) decreased from 85% to 80%
+	- (+) Effectiveness against heavy armor increased from 35% to 45%
+	- (+) Cluster missiles now turn and accelerate instantly to offset hardcoded launch angle and low speed
+- Chemical Missile:
+	- (+) Max. speed increased from 30 to 50
+	- (-) Acceleration rate decreased from 3 to 1
+	- (-) No longer penetrates Firestorm barrier
+- Advanced Power Plant:
+	- (+) Strength increased from 750 to 1000
+	- (-) Cost increased from 500 to 600
+- War Factory:
+	- (+) Strength increased from 1000 to 1500
+	- (-) Armor changed from heavy to wood
+- (-) Radar Facility now attracts lightning during ion storms
+- Technology Center:
+	- (+) Provides a steady stream of money – 100 credits every 8 seconds (at 30 FPS) – to discourage players from selling it
+	- (+) Strength increased from 500 to 650
+	- (+) Can be turned off to conserve power, but will not produce cash when disabled
+	- (-) Cost increased from 1500 to 2000, to slow tech-rushing
+	- (-) Only one can be built at a time
+	- (-) Attracts lightning during ion storms
+- Stealth Generator:
+	- (-) No longer reveals adjacent cloaked objects
+	- (-) Attracts lightning during ion storms
+- (-) Missile Silo now attracts lightning during ion storms
+- Tiberium Waste Facility:
+	- (±) Renamed Chemical Facility, mostly to conserve space on the sidebar
+	- (-) No longer reveals adjacent cloaked objects
+	- (-) Attracts lightning during ion storms
+- Temple of Nod:
+	- (+) Strength increased from 1000 to 1500
+	- (+) Power consumption decreased from 200 to 150
+	- (±) Now acts as a barracks for special infantry to compensate for the removal of the Hunter-Seeker superweapon
+	- (-) No longer reveals adjacent cloaked objects
+	- (-) Attracts lightning during ion storms
+- Pyramid of Nod:
+	- (±) Armor upgraded from heavy to concrete
+	- (-) No longer reveals adjacent cloaked objects
+- Vega's Pyramid:
+	- (+) Strength increased from 100 to 1500
+	- (±) Armor upgraded from none to concrete
+- Montauk:
+	- (-) No longer expands build radius
+	- (-) No longer reveals adjacent cloaked objects
+- Laser Turret:
+	- (+) Damage increased from 30 to 40
+	- (+) Range increased from 5.5 to 6 cells
+	- (+) Can melt ice
+	- (±) Armor upgraded from wood to light
+	- (-) Strength decreased from 500 to 375
+	- (-) Cost increased from 300 to 400
+- SAM Site:
+	- (-) Rate-of-turn decreased to 10 (was undefined, i.e. as fast as possible)
+	- (+) Damage increased from 33 to 48
+	- (+) Max. missile speed increased from 30 to 50
+	- (-) Rate-of-fire decreased by 37.5% (ROF incr. from 50 to 80)
+- (-) Laser Fence Posts now attract lightning during ion storms
+- (+) Laser Fence Sections can no longer be destroyed without destroying the Fence Posts
+- Obelisk of Light:
+	- (+) Rate-of-fire increased by 50% (ROF decreased from 120 to 80), excluding delay from charge animation
+	- (+) Damage spread increased from 0 to 10
+	- (+) Can destroy walls, bridges, and ice
+	- (-) Attracts lightning during ion storms
+	- (-) Charge animation slowed down (`TurretChargeAnimRate` set to 5)
+- Light Infantry:
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, and weapon range and heals itself when elite
+	- (+) Damage increased from 8 to 10
+	- (-) Strength decreased from 125 to 100
+- Rocket Infantry:
+	- (+) Damage increased from 25 to 35
+	- (+) Max. missile speed increased from 25 to 40
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased rate-of-fire, firepower, and weapon range and heals itself when elite
+- Cyborg:
+	- (+) Immunity to webs
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and weapon range, heals itself, and scatters automatically when elite
+	- (+) Damage increased from 10 to 16 per burst
+- Elite Cadre:
+	- (±) Armor changed from light to none
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and weapon range, heals itself, and scatters automatically when elite
+	- (-) Strength decreased from 175 to 150
+	- (±) No longer fires in bursts (damage increased to compensate)
+- Chameleon Spy:
+	- (+) Gains increased strength and speed  when veteran
+	- (+) Heals itself and scatters automatically when elite
+- Slavik:
+	- (+) Armed with a machine gun by default
+	- (-) Strength decreased from 300 to 165
+	- (-) Cost increased from 100 to 200 (affects veterancy)
+- Oxanna:
+	- (+) Strength increased from 50 to 75
+	- (-) No longer heals in Tiberium (this must've been an oversight!)
+	- (-) No longer immune to Tiberium
+	- (-) Damage decreased from 20 to 10
+	- (+) Rate-of-fire approximately trippled (ROF decr. from 60 to 21)
+- Mutant Hijacker:
+	- (+) Cloaked when idle
+	- (+) Cost decreased from 1850 to 900
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased sight range, heals itself, and scatters automatically when elite
+	- (-) Can only be trained from a Temple of Nod
+	- (-) Strength decreased from 300 to 150
+- Cyborg Commando:
+	- (+) Gains increased strength and speed  when veteran
+	- (+) Gains increased firepower, rate-of-fire, weapon and sight range, heals itself, and scatters automatically when elite
+	- Proton torpedo replaced with a proton beam
+		- (+) Hits target instantly
+		- (+) No longer susceptible to elevation
+	- (+) Damage spread increased from 0 to 20
+	- (+) Destroys ice
+	- (-) Can only be trained from a Temple of Nod
+- Attack Buggy:
+	- (+) Renamed to Raider
+	- (+) Added a rotateable turret
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, and weapon range, repairs itself, crushes infantry, and reveals adjacent cloaked objects when elite
+	- (-) Strength decreased from 220 to 175
+	- (±) Fires twice, damage split evenly
+- Attack Cycle:
+	- (+) Renamed to Interceptor
+	- (+) Sight range increased from 5 to 6 cells
+	- (+) Speed increased from 12 to 13
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, and anti-ground range, repairs itself and reveals adjacent cloaked objects when elite
+	- (+) Immune to veins by default (it did not make sense why bikes could not cross veins safely while buggies or Wolverines could)
+	- (+) Now equipped with additional anti-air missiles
+	- (+) Missile max. speed increased from 30 to 40
+	- (+) Damage increased from 40 to 60, split into two missiles
+	- (+) Range increased from 5 to 6
+	- (-) Rate-of-fire decreased by ~33% (ROF incr. from 60 to 90)
+- Tick Tank:
+	- (+) Added a rotateable turret for mobile mode
+	- (+) Strength increased from 350 to 400
+	- (±) Armor upgraded from light to heavy when mobile
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Repairs itself when elite
+	- (-) Cost increased from 800 to 900
+	- (-) Acceleration rate decreased from 0.03 to 0.02
+	- (-) No longer senses adjacent cloaked objects when elite
+	- (-) Nominal range decreased from 6.75 to 6 cells (used to be able to outrange a Titan due to arcing -- likely an oversight)
+- Mobile Repair Vehicle:
+	- (+) Added a rotateable turret (graphics pending)
+	- (+) Gains increased strength, speed, and sight range and repairs itself when veteran
+	- (+) Repairs faster when elite
+	- (-) No longer uses the Mammoth Tank's twin cannon weapon when elite
+- Artillery:
+	- (+) Reverted skirmish/multiplayer limitations:
+		- (+) Damage increased from 115 to 150
+			- (-) Deform threshold increased from 120 to 150 to compensate
+		- (+) Rate-of-fire increased by ~36% (ROF decr. from 150 to 110)
+	- (+) Damage spread increased from 6 to 12
+	- (+) Effectiveness against none armor increased from 40% to 70% 
+	- (+) Maximum range increased from 18 to 22 cells
+	- (-) Minimum range increased from 5 to 6 cells
+	- (+) Gains increased strength and speed (if applicable) when veteran
+	- (+) Gains increased rate-of-fire, firepower, and range and repairs itself when elite
+	- (-) Cost increased from 975 to 1200
+	- (-) Acceleration rate decreased from 0.03 to 0.02
+	- (-) Attracts lightning during ion storms
+- Subterranean APC:
+	- (+) Renamed to Mole APC
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Repairs itself when elite
+	- (-) Added any barracks as a building requirement
+- Devil's Tongue:
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, and weapon range and repairs itself when elite
+	- (±) Armor upgraded from light to heavy
+	- (±) Explodes when destroyed, damaging any nearby objects
+	- Reworked the weapon into a conventional fireball launcher
+		- (±) No longer uses a fire particle system, fixing issues with elevation but removing ambient (piercing) damage
+		- (+) Damage is dealt instantly on hit, plus burn damage from napalm over time
+		- (+) Allows firing from both flamethrowers simultaneously
+		- (±) Nominal range decreased from 4.25 to 4 cells, however the actual range is higher due to the arcing behavior of the fireballs
+		- New warhead
+			- (+) Damage spread increased from 8 to 12
+			- (+) Creates flames that cause damage over time
+			- (+) Effectiveness against heavy armor increased from 6% to 25%
+			- (+) Effectiveness against concrete armor increased from 2% to 8%
+			- (-) Effectiveness against none armor decreased from 600% to 150% (it was ridiculously high!)
+			- (-) Effectiveness against wood armor decreased from 148% to 120%
+			- (-) Effectiveness against prone infantry decreased from 600% to 75% (it was ridiculously high!)
+			- (±) Can destroy or ignite Tiberium
+	- (-) Cost increased from 750 to 900
+	- (-) Has to accelerate/decelerate
+- Stealth Tank:
+	- (+) Added a rotateable turret
+	- (+) Speed increased from 6 to 7
+	- (+) Rate-of-turn increased from 5 to 6
+	- (+) Cloaking speed increased 5-fold, from 5 to 1 (lower means faster)
+	- (+) Gains increased strength, speed, sight range, and becomes invisible in radar when veteran
+	- (+) Gains increased firepower, rate-of-fire, and weapon range and repairs itself when elite
+	- (+) Immunity to veins
+	- (+) Missile max. speed increased from 25 to 40
+	- (-) Attracts lightning during ion storms
+- Cyborg Reaper:
+	- (-) No longer included in the starting units pool
+	- (±) Locomotion behavior changed to that of mechs
+	- (+) Fixed missing threat value
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased firepower, rate-of-fire, and sight range and repairs itself when elite
+	- (+) Cluster missiles now split instantly, improving performance especially in close-range situations
+	- (+) Missile rate-of-fire increased by ~24% (ROF decr. from 180 to 145)
+	- (+) Missile minimum range decreased from 3 to 2
+	- (-) Missile damage decreased from 50 to 40
+	- (+) Missile effectiveness against light armor increased from 75% to 100%
+	- (-) Missile effectiveness against heavy armor decreased from 100% to 75%
+	- (-) Missiles can no longer penetrate a Firestorm barrier
+	- (+) Web launcher rate-of-fire doubled (ROF decr. from 200 to 100)
+	- (-) Web duration halved, from 600 to 300 frames
+	- (±) Web duration variation increased from 25 to 50 frames
+- Mobile Stealth Generator:
+	- (+) Renamed to Shroud Weaver
+	- (+) Has a chance to eject a survivor when destroyed
+	- (+) Gains increased strength, speed (when mobile), and sight range when veteran
+	- (+) Repairs itself when elite
+	- (±) Explodes violently when destroyed when elite and deployed (used to only apply when mobile)
+	- (±) Armor changed from wood to light when deployed
+	- (-) No longer reveals adjacent cloaked objects when deployed
+	- (-) Attracts lightning during ion storms
+- Weed Eater:
+	- (+) Speed increased from 5 to 6
+	- (+) Automatically tries to crush enemy infantry, like Harvesters do
+	- (+) Gains increased speed and sight range when veteran
+	- (+) Gains increased strength when elite
+	- (+) Deceleration rate decreased from 0.002 to 0.001 (lower means faster)
+	- (-) Acceleration rate increased from 0.03 to 0.02 (lower means slower)
+- ICBM Launcher:
+	- (+) Now has a chance to eject a survivor when destroyed
+	- (±) Deployed mode now shares the same armor (light, was wood) and strength (500, was 400) values as mobile mode
+	- (-) Acceleration rate decreased from 0.03 to 0.02
+- Harpy:
+	- (+) Infinite ammo
+	- (+) Damage increased from 60 to 76, split into two rounds
+	- (+) Automatically acquires new targets within guard range
+	- (+) Sight range increased from 2 to 7
+	- (+) Gains increased strength, speed, and radar invisibility when veteran
+	- (+) Gains increased firepower, rate-of-fire, and sight range when elite
+	- (±) Armor upgraded from light to heavy
+	- (-) Strength decreased from 225 to 180
+	- (-) No longer invisible to radar by default
+	- (-) Cost reverted from 800 to 1000
+	- (-) Rate-of-turn decreased from 5 to 3
+- Banshee:
+	- (+) Now invisible to radar by default
+	- (+) Sight range increased from 2 to 6
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased firepower, rate-of-fire, sight range, and stealth when elite
+	- (+) Damage increased from 20 to 24
+	- (+) Damage spread increased from 3 to 6
+	- (+) Can ignite buildings and Tiberium
+	- (+) Proton torpedoes no longer have to accelerate
+	- (+) Proton torpedo speed increased from 30 to 40
+	- (±) Armor upgraded from light to heavy
+	- (-) Strength decreased from 280 to 230
+	- (-) Cost reverted from 1250 to 1500
+
+#### CABAL
+
+- CABAL Core:
+	- (+) Produces 500 power (for operating Core Obelisks with)
+	- (-) Footprint increased from 3x3 to 4x4 cells to fit the entire building frame
+- (-) Core Obelisks now require a small amount of power to operate
+- CABAL Obelisk:
+	- (+) Damage increased from 100 to 350
+	- (+) Rate-of-fire approximately trippled (ROF decr. from 70 to 24)
+	- (+) Damage spread increased from 0 to 15
+	- (+) Can destroy walls
+- Obelisk of Darkness:
+	- (-) Rate-of-fire decreased by ~17% (ROF incr. from 20 to 24) so it has time to finish the charge animation
+	- (-) Can no longer eject human survivors by default
+- (+) New units:
+	- Manticore. A light recon drone armed with twin machine guns.
+	- Cyclone. A light recon drone armed with vertically launched anti-armor missiles.
+	- Charon. A high-tech, heavy hover tank armed with a piercing energy cannon.
+	- Cyborg Engineer (WIP)
+- Core Defender:
+	- (±) Replaced the laser weapon with plasma cannons, based on design similarities with the Cyborg Commando and leftover code
+		- (+) Now able to attack both air and ground units
+		- (+) Damage now spreads over a small area (Spread incr. from 0 to 40)
+		- (+) Effectiveness against none armor increased from 100% to 180%
+		- (+) Effectiveness against wood armor increased from 100% to 130%
+		- (+) Effectiveness against prone infantry increased from 60% to 100%
+		- (-) Damage decreased from 350 to 300
+		- (-) Effectiveness against heavy armor decreased from 100% to 90%
+		- (-) Effectiveness against concrete armor decreased from 100% to 70%
+		- (-) Rate-of-fire decreased by ~17% (ROF incr. from 20 to 24)
+		- (-) No longer instantly hits targets (though the plasma spheres move quickly)
+		- (-) Now has a minimum range of 1.49 cells to avoid an issue where the plasma spheres shoot over adjacent targets
+	- (+) Gains increased speed and strength when veteran
+	- (+) Gains increased firepower and reveals adjacent cloaked objects when elite
+	- (-) Cost increased from 2000 to 10000 (affects veterancy)
+	- (-) Can no longer fire while on the move and again immediately after stopping (a bug with NoMovingFire)
+	- (-) Can no longer be lifted by a Carryall
+	- (-) No longer reveals adjacent cloaked objects when deployed
+	- (-) Attracts lightning during ion storms
+	
+#### Neutral
+
+- (+) Civilian Array, Hospital, and Armory are now capturable tech buildings
+	- (+) Hospital and Armory provide build radius and can heal/upgrade infantry practically infinitely
+	- (+) Array provides radar and build radius
+	- (-) Each tech building consumes a small amount of power
+- (-) Civilian buildings no longer expand build radius (excluding tech buildings)
+- Fixed contradictions where the same civilian building had different strength values in different theaters:
+	- (-) Gas Station strength decreased from 500 to 400 in temperate theater
+	- (-) Gas Pump strength decreased from 400 to 250 in arctic theater
+	- (-) Gas Station Sign strength decreased from 400 to 100 in arctic theater
+- (±) D's Dog House renamed Port-a-Stack
+- (-) Egyptian pyramids are no longer indestructible, but still highly durable
+- (±) Crash 1–5 renamed Wreckages
+- Civilians:
+	- (+) `CIV4` and `CIV6` are now armed with pistols, to differentiate them from `CIV1` and `CIV3`, respectively.
+	- (+) Gain increased strength and speed when veteran
+	- (+) Gain increased sight range and heal themselves when elite
+- Mutant:
+	- (+) Strength doubled from 50 to 100
+	- (+) Speed increased from 4 to 5
+	- (+) Sight range increased from 4 to 5
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and weapon range, heals itself, and scatters automatically when elite
+	- (+) Rate-of-fire increased by 50% (ROF decr. from 60 to 40)
+	- (-) Cost increased from 100 to 150 (affects veterancy)
+- Mutant Soldier:
+	- (+) Strength tripled from 50 to 150
+	- (+) Sight range increased from 4 to 6
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and weapon range, heals itself, and scatters automatically when elite
+	- (±) Machine gun replaced with an electric bolt weapon
+	- (-) Cost increased from 100 to 400 (affects veterancy)
+- Mutant Sergeant:
+	- (+) Strength increased from 50 to 170
+	- (+) Speed increased from 4 to 5
+	- (+) Sight range increased from 4 to 5
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and weapon range, heals itself, and scatters automatically when elite
+	- (+) Damage increased from 20 to 25
+	- (+) Rate-of-fire doubled (ROF decr. from 60 to 30)
+	- (-) Cost increased from 100 to 400 (affects veterancy)
+- Umagon:
+	- (+) Range increased from 6.75 to 10 cells
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased firepower, rate-of-fire, sight and weapon range, and scatters automatically when elite
+	- (±) Armor changed from light to none
+	- (-) Cost increased from 400 to 600 (affects veterancy)
+	- (-) No longer does any significant damage to other armor types
+- Tratos:
+	- (-) Strength decreased from 200 to 60
+- TD Mammoth Tank:
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, and sight range when elite
+	- (+) Anti-air missile speed increased from 20 to 40
+	- (-) Acceleration rate decreased from 0.03 to 0.01
+	- (-) Nominal range decreased from 6.75 to 6 cells
+- TD Flame Tank:
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased firepower, rate-of-fire, and weapon range and repairs itself when elite
+	- (±) Explodes when destroyed, damaging any nearby objects (used to be an elite ability, now default)
+- Train:
+	- (+) Strength multiplied by 4 (from 100 to 400)
+	- (+) Speed increased from 8 to 10
+	- (-) Deceleration rate increased from 0.001 to 0.006 (higher means slower)
+- Pickup Truck:
+	- (+) Strength increased from 100 to 150
+	- (+) Immunity to veins
+- Automobile:
+	- (+) Immunity to veins
+- Recreational Vehicle:
+	- (-) Speed decreased from 8 to 7
+	- (-) No longer immune to veins
+	- (-) Can no longer spawn from crates for GDI
+- School Bus:
+	- (+) Strength increased from 100 to 300
+	- (-) Speed decreased from 8 to 7
+	- (-) No longer immune to veins
+- Baby Visceroid:
+	- (±) Renamed to Juvenile Visceroid
+	- (+) Enabled sight
+	- (+) Has a chance to release toxic gas when killed
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Heals itself when elite
+	- (+) Speed is much less affected by terrain (SpeedType changed from Wheel to Creep)
+	- (-) Speed decreased from 10 to 8
+	- (-) Cost increased from 1 to 100 (affects veterancy)
+	- (-) Can be crushed
+- Adult Visceroid:
+	- (+) Enabled sight
+	- (+) Has a chance to release toxic gas when killed
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased rate-of-fire and firepower, heals itself and crushes infantry when elite
+	- (+) Reveals adjacent cloaked objects
+	- (+) Speed is much less affected by terrain (SpeedType changed from Wheel to Creep)
+	- (+) Has a chance to mutate kills into more Visceroids
+	- (-) Cost increased from 1 to 800 (affects veterancy)
+	- (-) Range decreased from 2 to 1.98 cells so it can't shoot over walls
+	- (-) Effectiveness against wood armor decreased from 100% to 80%
+- Tiberian Fiend:
+	- (+) Immunity to webs
+	- (+) Gains increased strength and speed when veteran
+	- (+) Gains increased rate-of-fire, firepower, sight and weapon range, heals itself, and scatters automatically when elite
+	- (±) Shards have a chance of spawning Tiberium when landing on the ground
+	- (-) No longer fires in bursts; total damage decreased from 105 to 45
+	- (-) Shards no longer snap at targets
+	- (-) Cost increased from 100 to 1000 (affects veterancy)
+- Tiberium Floater:
+	- (+) Gains increased strength, speed, and sight range when veteran
+	- (+) Gains increased rate-of-fire and firepower and heals itself when elite
+	- (-) Cost increased from 1 to 800 (affects veterancy)
+
+#### AI
+
+- Checks and builds teams faster (TeamDelays decreased from 2250,2700,3600 to 900,1800,2700)
+- Chooses its enemy much faster than before (AIHateDelays decreased from 5400,4500,4050 to 450,1350,3150)
+- In multiplayer, Hard AI receives 20% more initial credits than before (MultiplayerAICM increased from 250 to 300)
+- Maximum amount of defensive teams (MaximumAIDefensiveTeams) increased from 6,5,4 to 12,10,8
+- Total team limits doubled (TotalAITeamCap increased from 14,12,10 to 28,24,20)
+- The AI will now wait slightly longer before disolving a team that has no members (DissolveUnfilledTeamDelay increased from 9000 to 10800), to account for the construction time of the most expensive unit (the Mammoth) in the worst low power scenario.
+- Some AI-controlled units that deal splash damage now avoid causing collateral damage to friendly units (Supress control on weapon types)
+- The AI now builds multiple factories.
+- The AI now builds an extra Tiberium refinery.
+- Hard and medium AI aircraft attack teams now consist of more than 1 unit, enough to destroy the intended target if not countered.
+- The AI now builds Mobile Sensor Vehicles, EMP Tanks, Limpet Drones, and Shroud Weavers.
+- The AI now builds and fires EMP Cannons. Due to engine limitations, these EMP Cannons have infinite range. To compensate, the EMP fades off quicker and has a much smaller area of effect than normal.
+- Hard and medium AI attack team unit compositions are now more varied.
+
+#### Terrain
+
+- Tiberium (Blossom) Trees now visibly spit out Tiberium seeds that can cover a small area, as opposed to just magically spawning Tiberium on the neighboring cells
+	- Note that currently, due to an engine bug, seeded Tiberium has little to no chance of growing or spreading by itself
+- Modified the speed penalties of different land types, expressed as percentage of full speed:
+	- Clear terrain:
+		- (+) Tracked vehicle speed increased from 70% to 90%
+		- (+) Wheeled vehicle speed increased from 70% to 90%
+		- (+) Amphibious vehicle speed increased from 80% to 90%
+		- (-) Walker (`Creep`) speed decreased from 100% to 90%
+	- Rough terrain:
+		- (+) Tracked vehicle speed increased from 60% to 80%
+		- (+) Wheeled vehicle speed increased from 40% to 75%
+		- (+) Amphibious vehicle speed increased from 40% to 75%
+		- (-) Walker speed decreased from 90% to 80%
+	- (-) Amphibious vehicle speed on water decreased from 80% to 60%
+	- Tiberium:
+		- (+) Tracked vehicle speed increased from 70% to 80%
+		- (+) Wheeled vehicle speed increased from 50% to 70%
+		- (+) Amphibious vehicle speed increased from 50% to 70%
+		- (-) Walker speed decreased from 100% to 90%
+	- Veins:
+		- (-) Tracked vehicle speed decreased from 70% to 50%
+		- (-) Wheeled vehicle speed decreased from 50% to 30%
+		- (-) Amphibious vehicle speed decreased from 50% to 40%
+		- (-) Walker speed decreased from 90% to 60%
+	- (+) Amphibious vehicle speed on beach increased from 60% to 70%
+	- Ice:
+		- (+) Infantry speed increased from 50% to 70%
+		- (-) Tracked vehicle speed decreased from 70% to 60%
+		- (-) Walker speed decreased from 100% to 70%
+	- Railroads:
+		- (-) Tracked vehicle speed decreased from 100% to 80%
+		- (+) Wheeled vehicle speed increased from 50% to 60%
+		- (+) Amphibious vehicle speed increased from 50% to 80%
+		- (-) Walker (`Creep`) speed decreased from 100% to 80%
+- Large rough tiles now use the ice land type internally to allow more variation in terrain roughness
+- Tiberian Fona are no longer flammable (`Armor` changed from wood to light, which prevents the terrain objects from catching fire)
+- The grey terrain in the arctic theater can now be deformed by craters
+- Reverted an edit made to shore tiles that allowed units to move and buildings to be placed on previously impassable tiles.
+
+
+### Visuals
+
+- New:
+	- Remade several unit graphics (credit: Demo): ORCA Transport, Artillery, Mole APC (Subterranean APC), Devil's Tongue
+		- Based on Crimsonum's work (credit: Demo): Grizzly APC (Amphibious APC), Kite (Hover MLRS), Disruptor, Raider (Buggy), Interceptor (Bike), Tick Tank, Stealth Tank, Harpy
+		- Based on Stingerr's work (credit: Demo): ORCA Fighter, ORCA Bomber, Dropship
+		- Other remakes by various authors: Titan (credit: areaSZ), Mammoth Mk. II (credit: Lin Kuei Ominae), Hunter-Seeker (credit: Crimsonum)
+	- GDI and Nod now have separate variants of Light Infantry and Engineers
+	- Remade the "electrocution" infantry death animation (credit: Demo)
+	- Replaced the default infantry explosion animation with an organic, "gibbed" death animation
+	- Large explosions may now shake the screen
+	- Machine guns and cannons now eject spent casings when firing
+	- Cannon shells, bombs, rockets, and missiles now use 3D voxel imagery where possible
+	- Cannons, rocket launchers, etc. now create a puff of smoke from the muzzle when firing
+	- Lasers now produce a visible impact animation
+	- RPGs now leave a smoke trail
+	- Power plants and Nod War Factory now produce visible smoke from their smoke stacks
+	- The Chemical Facility may now emit green smoke when damaged
+	- Destroyed buildings may now leave smoking craters behind
+	- Restored unused debris types and added new ones; vehicles now eject more varied debris (turrets, rocket pods, etc.) when destroyed
+	- All units and buildings now display their names when hovered over
+	- Limpet Drones may now emit sparks and smoke when damaged
+	- Tiberian Fiend now visually hurls multiple shards at once
+	- Superweapons show timers
+	- Restored the unused damaged version of the Laser Fence Post idle animation
+	- Laser Turret now has an idle animation to convey its power state
+	- SAM Site now has a unique turret animation
+	- Lasers and railguns now produce a visible blast on impact
+- Fixes:
+	- Fixed the Obelisk of Light firing offset
+	- Mitigated the issue where the first frame of the Obelisk charging animation flashes whenever it plays
+	- Fixed an oversight where objects behind the large Kodiak were visible through its windows
+	- Added a patch that fixes translucent graphics (credit: Apollo)
+	- Fixed a typo that caused certain debris to simply disappear on impact
+	- Cyborgs may now emit sparks when damaged
+	- Infantry dying to an Adult Visceroid no longer simply vanish
+	- Fixed multiple units having incorrect or missing firing offsets
+	- The Core Defender now explodes and crumbles at the same time when destroyed
+	- Fixed several building animations having incorrect start or end frames
+	- Fixed an issue where the Harvester dock animation was hidden under the Tiberium Refinery
+	- Fixed the hitbox height on several buildings
+	- Fixed civilian dam alignment and clipping issues with waterfalls/cliffs
+	- Fixed an issue with the Cyborg firing sequence when prone
+	- Fixed an issue where various infantry had either incorrect or missing firing coordinates
+	- Fixed an issue where civilians "blink" when firing while in panicked mode
+	- Fixed some odd colors in infantry corpse animations
+- Improvements:
+	- Revised smoke animations based on best practises
+	- All large debris animation types now emit smoke (used to apply to just one)
+	- Improved the beacon animation with a non-dithered shadow and a glow-in-the-dark light
+	- Civilian array's spinning dish animations now play slower when damaged
+	- Re-rendered the large Kodiak using terrain palette (isotem.pal), allowing it to better blend in with the surroundings
+	- Increased the density of projectile trailer animations (e.g. trailer smoke from missiles)
+	- Large missiles now emit larger trailer smoke clouds
+	- Proton torpedoes now glow in the dark, as one could expect from energy projectiles
+	- Increased the duration of in-game messages (`MessageDelay` incr. from 0.6 to 2 minutes at 15 FPS)
+	- Changed the Riparium (green Tiberium) color to chartreuse green, reminiscent of the original Tiberian Dawn color
+	- Changed the Viniferum (blue Tiberium) color to a less saturated, purpleish blue (grape)
+	- Mammoth Mk. II now has a larger explosion and spawns more debris when destroyed
+	- Increased the weight of civilian Pickup Trucks by 50%, from 1 to 1.5, so they will rock less from explosions
+	- Decreased the weight of civilian Recreational Vehicles by 25%, from 4 to 3, so they will rock more from explosions
+	- Most explosives now rock nearby units and create bright flashes on impact
+	- Tweaked railgun effects
+	- Restored the unused, sprite-based EMP Cannon turret (for now, until the voxel turret model has been remade)
+	- Upscaled the EMP blast animation to match the size of the area of effect
+	- Units no longer glow by default (disabled `ExtraUnitLight`, `ExtraInfantryLight`, and `ExtraAircraftLight`)
+	- Removed targeting laser from Titan, Kite, and Mammoth Tank
+	- Tweaked the sprites of some infantry and vehicle units
+	- Most base building animations now shut down in low power conditions
+	- GDI Weapons Factory and Nod War Factory frontal lights now animate only during vehicle exit
+	- Removed lamp posts that were baked into a few city buildings
+	- Flames caused by fire, explosions etc. fade out more smoothly
+	- Other minor adjustments
+
+
+### Audio
+
+- All bonus crates are now accompanied by a relevant sound effect
+- Added several new high quality sound effects (credit: Henskelion)
+- Added more variety to civilian voice responses
+- Vehicle deployment no longer produces the same "slam" sound (BuildingDrop) that placing down a building does.
+- Restored the cut parachute deploy sound (ChuteSound)
+- Nod Mobile Repair Vehicle no longer uses human voice responses (it's a robotic vehicle)
+- Restored some unused unit voice responses
+- Multi-cell buildings no longer create multiple overlapping explosion sounds when destroyed
+- Restored unused building explosion sounds
+- Several weapons have new or restored sound effects
+- Heavier infantry units like Disc Throwers and Rocket Infantry now use slightly different, more confident voice responses
+- The Wolverine now uses more accurate and unique set of voice responses (e.g. "unit ready" instead of "infantry reporting")
+- Restored two cut music tracks, Initiate and Stomp.
+- Fixed an issue where Nod-specific music tracks were unavailable in skirmish/multiplayer
+- Changed some weapon/explosion sound effects
+- Restored cut infantry death cries
+
+
+### Campaign
+
+- Global changes:
+	- Improved ambiance (more varied lighting, ambient sounds, etc.)
+	- Restored missing audio and text lines, such as mission objective reminders
+	- Increased difficulty for medium and hard difficulty modes
+	- Changed the color of Hassan's forces to a lighter blue for improved visuals and to distinguish them from CABAL and other established factions
+	- The Cyborg Commando is now first armed with a conventional machine gun and a flamethrower before later upgrading to the proton cannon
+	- CABAL no longer uses GDI and Nod units and buildings in code, allowing the original buildings and units the chance to eject survivors (not yet fully implemented)
+- GDI Mission 1: Reinforce Phoenix Base
+	- Restored dropship loadout for configuring dropship reinforcements
+	- Extended and tweaked the intro scene to better match with the post-mission cutscene
+	- Slightly tweaked map layout
+- GDI Mission 2: Secure The Region
+	- Extended and tweaked the intro scene
+	- Tweaked the map layout to allow new strategic options
+- GDI Mission 3A: Secure The Crash Site
+	- Added dropship loadout
+	- Added a bonus objective (only available by completing 3B)
+	- Fixed an oversight that messed up one of the Nod cargo truck scripts when a bridge was repaired
+	- The Nod base will now receive periodic reinforcements by train
+	- Tweaked the intro scene
+	- Tweaked the map layout
+- GDI Mission 3B: Destroy The Supply Base
+	- Added an intro scene
+	- The Nod AI will now respond accordingly depending on if/when they detect GDI
+	- Moved one of the Civilian Arrays so that capturing them rewards the player for progressing through the mission
+	- Moved the demo truck event to another location and increased its tactical importance.
+	- Other misc. fixes and tweaks
+- GDI Mission 4: Defend The Crash Site
+	- Added dropship loadout
+	- Restored and tweaked a cut version of the ion storm entry scene
+	- Enemy attacks are now more varied and spread out
+- GDI Mission 5A: Destroy Radar Array
+	- Misc. fixes and adjustments
+- GDI Mission 11: Weather the Storm
+	- Implemented a larger, more realistic version of the Kodiak
+	- Restored unused ion storm mechanics
+	- Changed the map layout a little to offer more challenge
+	- The Kodiak no longer reveals adjacent cloaked objects
+- GDI Mission 12: Final Conflict
+	- Fixed an oversight that caused one of the Nod units to attack the civilian city prematurely
+	- Slightly tweaked the map layout
+- Firestorm GDI Mission 9: Core of the Problem
+	- Civilians are now allied to GDI
+	- The player can no longer build a Drop-Pod node to call in Drop-Pod reinforcements (after all, the comm. link to Philadelphia is severed)
+	- CABAL is now armed with multiple Cluster Missiles
+- Nod Mission 1: The Messiah Returns
+	- Restored unused voice & text lines
+	- Added new cinematic elements to the intro sequence
+	- Hassan's attacks are now stronger and more varied in medium & hard difficulty modes
+	- Fixed a plot hole in the briefing
+	- Other minor adjustments
+- Nod Mission 2: Retaliation
+	- Restored unused voice & text lines
+	- Added new tactical options
+	- Other minor fixes & adjustments
+- Nod Mission 3A: The Would-Be Pharaoh
+	- Restored cut and unused content
+	- Renamed the mission title
+- Nod Mission 3B: Seeds of Rebellion
+	- New scripted events and AI responses
+	- Changed the map layout to encourage strategic choices
+	- Renamed the mission title
+	- Removed GDI's presence
+- Nod Mission 8: Villainess In Distress
+	- Restored unused voice and text lines
+	- Tweaked the intro a little
+	- Made the enemy AI more aggressive against intruders
+	- GDI AI now reconstructs some buildings if destroyed
+	- Tweaked the map layout a little
+	- Other minor adjustments 
+
+
+### Multiplayer
+
+- Added an option to specify time of day
+- Added an option to specify wind direction
+- When multiple AI players are present and one of them is defeated, the remaining AIs no longer instantly ally against the human player(s) (Paranoid disabled)
+- New 2-player map: Highland Hollow
+- Grassy Knoll:
+	- Better ambience
+	- Added Tiberium monoliths to large Viniferum fields
+	- Added city lights that only turn on during the night (if dynamic lighting is selected)
+	- Other minor tweaks
+- Casey's Canyon:
+	- Better ambience
+	- Added Tiberium monoliths to large Viniferum fields 
+	- Added another Tech. Array to the opposite side of the map
+	- The train can now be boarded. It unloads automatically at the next stop
+	- Other minor tweaks
+
+
+### Map Editor
+
+- New map assets:
+	- New desert theater
+	- New light sources
+	- New props: Wood Fence, Chain-Link Fence
+	- New non-buildable units: Chem-Spray Infantry, Nod Technician (credit: Demo), Nod Officer (credit: Demo)
+	- New cracked and stony terrain sets for the temperate theater
+	- Completed the temperate slope set (two slope types were missing graphics)
+- Invisible Light Posts are now called Light Sources and have custom (in-editor only) graphics to help differentiate them from visible Light Posts
+- `INORNGLAMP` is now a negative orange light source, to differentiate it from the other orange light source `INORANLAMP`
+- Replaced Tiberium Tree terrain types with building types for improved functionality
+- In the Scripts dialog, replaced "script actions" with the correct term "team missions"
+- Changed default building facing from 64 (east) to 0 (north)
+- Updated to version 2022-01-05
+	- Allow max. map size support like 256x256.
+	- Override game content using <FinalSun>\MIX\extraXX.mix files where XX can be 00-99. 
+- Moved Map Renderer to the Map Editor directory.
+- Enabled LAT transition tile sets in the tile set menu
+- Removed some obsolete tile sets from the tile set menu
+
+
+### Client
+
+- Integrated with ReShade, a post-processing utility for additional visual effects. Enable it from the client settings.
+- New game options for skirmish and/or multiplayer: 
+	- Sandbox: allows near-instant construction of units and buildings.
+	- Ion Storms: summons periodic Ion Storms.
+	- Fog of War (skirmish only): adds another, translucent layer of shroud that regrows over time. It hides units but not buildings or terrain.
+	- Shroud Regrows (multiplayer only): the shroud slowly regenerates.
+- Added an option to select any mission from the campaign menu.
+- Multiplayer maps added in the Firestorm expansion are no longer separated in the maps list
+- Default game speed decreased from 60 FPS to 30 FPS in skirmish and 45 FPS in LAN/CnCNet.
+- Removed game type selection (obsolete).
+- Removed the option to play without bases.
+- Removed the option to specify the amount of starting units to accompany the MCV with; it's now either a full force or only MCV.
+- Removed the game option to toggle whether or not player units would target hostile neutral units (now always on).
+- Removed the game option to toggle Visceroids (now always on).
+- Removed the game option to toggle harder AI (obsolete).
+
+
+### Misc.
+
+- Added unbuildable, pre-upgraded Component Towers for future use
+- Removed the large Kodiak building (`KODIAK`) and used its graphics on the original Kodiak (`GAKODK`)
+- Several items have been dehardcoded
+- Removed obsolete Red Alert leftovers from the terrain and smugde type lists
+- Cleaned up the animations list, fixing indices and removing duplicates
+- Restored the missing JEEP vehicle type for future use
+- Integrated with Vinifera, an open-source engine extension for Tiberian Sun (see https://github.com/Vinifera-Developers/Vinifera)
+- Updated game executable with latest TS patches (build 732ee9f, date 2022-11-01)
+- Restored and updated mission.ini and mission1.ini for future use
+- Updated CnC-DDraw to version 5.0.0.0
+- Migrated Firestorm changes/additions to Tiberian Sun (unless reverted/replaced)
+- Improved organization and readability of the game's main INI files
+- Removed GDI1ADSHP.MAP (a now-redundant copy of GDI Mission 1)
+
+
+## Definitions (A Guide For Newbies):
+
+- **Acceleration rate** means how fast the object will accelerate. The higher the rate, the faster the object will accelerate. Note that different object types may use different acceleration units.
+- **Ambient damage** is the base amount of damage dealt along the weapon's line of fire. It allows the weapon to pierce and damage multiple targets. Only certain special weapons, like railguns and sonic waves, can deal ambient damage.
+- **Armor** comes in five types: none, wood, light, heavy, and concrete. Each armor type has its own strengths and weaknesses. Generally, the heavier the armor, the more resistant it is to small arms, but also more susceptible to armor-piercing warheads.
+- **Cell** is the basic map grid unit. Vehicles and aircraft occupy one cell each. Buildings can occupy multiple cells.
+- **Damage** is the base amount of damage dealt by a single shot of the weapon. The amount of actual hitpoints deduced from the victim is damage multiplied with the weapon's effectiveness against the target's armor type (and in case the target is an infantry unit, whether it's standing, prone or flying).
+- **Damage spread** controls the damage falloff from the warhead's point of impact. The larger the value, the farther damage spreads.
+- **Deceleration rate** means how fast the object will slow down. Note that higher values result in *slower* deceleration rate. Also note that different object types may use different deceleration units.
+- **Lepton** is the smallest distance unit in the game. A lepton is 1/256th of a cell edge's length.
+- **Range** is measured in cells.
+- **ROF**, despite standing for rate-of-fire, is actually the cooldown of the weapon. Hence a lower ROF value means higher rate-of-fire.
+- **Scatter** is the ability for the unit to scatter automatically from enemy fire and to avoid getting crushed by heavy vehicles. Some units gain this ability when reaching veteran or elite rank.
+- **Slowdown distance** is the distance to the destination at which point the unit will begin to decelerate. It is measured in leptons.
+- **Speed** is the maximum speed of the object. However, the actual speed of an object depends on the object's "locomotor", with different types of objects having different locomotors. Hence a mech and a tank with the same speed value may actually have very different speeds in-game.
+- **Strength** is the base amount of hitpoint an object has.
+

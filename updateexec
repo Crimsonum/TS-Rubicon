@@ -1,6 +1,10 @@
+; This file is executed post-update.
+; If the update fails, any changes made according to this file are reverted.
 [Rename]
+;OLD_FILE_PATH=NEW_FILE_PATH
 
 [Delete]
+changelog.txt
 INI\battlefs.ini
 Map Editor\Info.txt
 Map Editor\readme marble.doc
@@ -39,16 +43,22 @@ Resources\TS Theme\updaterbg.png
 Resources\TS Theme\slocindicatorr.png
 Resources\TS Theme\slocindicatorx.png
 Map Editor\Scripts\- MP Enable Change Owner Function.fscript
+INI\ion.ini
 INI\MPMaps.pkt
 INI\theme01.ini
+INI\Game Options\Harder AI.ini
 Resources\TS Theme\sortAlphaActive.png
 Resources\TS Theme\sortAlphaInactive.png
 
 [RenameFolder]
+;OLD_FOLDER_PATH=NEW_FOLDER_PATH
 
 [RenameAndMerge]
-
-[DeleteFolderIfEmpty]
+;OLD_FOLDER_PATH=NEW_FOLDER_PATH
 
 [ForceDeleteFolder]
+;FOLDER_PATH
+
+[DeleteFolderIfEmpty]
+;FOLDER_PATH
 

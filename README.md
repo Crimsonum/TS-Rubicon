@@ -13,6 +13,8 @@ A modification of Command & Conquer:tm: Tiberian Sun:tm: based on the [CnCNet Ti
 | Lin Kuei Ominae | Mammoth Mk. II graphics |
 | Stingerr | Tiberian Sun Mk. II assets |
 
+See the [credits](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/credits.txt) for all contributions.
+
 ### CnCNet Tiberian Sun Client Package
 * [Bittah](https://github.com/Bittah)
 * [CCHyper](https://github.com/CCHyper)

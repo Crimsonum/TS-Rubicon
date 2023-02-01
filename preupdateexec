@@ -1,12 +1,26 @@
+; This file is executed prior to updating.
+; If the update fails, any changes made according to this file are NOT reverted.
+
 [Rename]
+TiberianSun.exe=Rubicon.exe
+INI\day.ini=INI\Game Options\Time Day.ini
+INI\dusk.ini=INI\Game Options\Time Dusk.ini
+INI\morning.ini=INI\Game Options\Time Morning.ini
+INI\night.ini=INI\Game Options\Time Night.ini
 
 [Delete]
+;FILE_PATH
 
 [RenameFolder]
+Map Renderer=Map Editor\Map Renderer
 
 [RenameAndMerge]
-
-[DeleteFolderIfEmpty]
+Maps\Firestorm=Maps\Multiplayer
+Maps\Tiberian Sun=Maps\Multiplayer
 
 [ForceDeleteFolder]
+;FOLDER_PATH
+
+[DeleteFolderIfEmpty]
+;FOLDER_PATH
 
