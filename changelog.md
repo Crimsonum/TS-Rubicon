@@ -1,7 +1,8 @@
 # Tiberian Sun: Rubicon Changelog
 
-All changes and assets, except for voxel models, were made by Crimsonum unless stated otherwise.
-See changelog_tsclient.txt for changes made specifically to the CnCNet TS client package.
+All changes and assets were made by Crimsonum unless stated otherwise. Tools and client features were created by their respective developers. See the [credits](https://github.com/Legion-13/TS-Rubicon/blob/master/credits.md) for more information.
+
+For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/changelog.txt).
 
 ## Table of Contents
 1. Developer Version 0.1
@@ -927,9 +928,10 @@ See changelog_tsclient.txt for changes made specifically to the CnCNet TS client
 ### Visuals
 
 - New:
-	- Remade several unit graphics (credit: Demo): ORCA Transport, Artillery, Mole APC (Subterranean APC), Devil's Tongue
-		- Based on Crimsonum's work (credit: Demo): Grizzly APC (Amphibious APC), Kite (Hover MLRS), Disruptor, Raider (Buggy), Interceptor (Bike), Tick Tank, Stealth Tank, Harpy
-		- Based on Stingerr's work (credit: Demo): ORCA Fighter, ORCA Bomber, Dropship
+	- Integrated ReShade, a post-processing utility for additional visual effects. Enable it from the client settings.
+	- Remade several unit graphics (credit: Demo): ORCA Transport, Artillery, Mole APC (Subterranean APC), Devil's Tongue,
+		- Based on Crimsonum's work: Grizzly APC (Amphibious APC), Kite (Hover MLRS), Disruptor, Raider (Buggy), Interceptor (Bike), Tick Tank, Stealth Tank, Harpy
+		- Based on Stingerr's work: ORCA Fighter, ORCA Bomber, Dropship
 		- Other remakes by various authors: Titan (credit: areaSZ), Mammoth Mk. II (credit: Lin Kuei Ominae), Hunter-Seeker (credit: Crimsonum)
 	- GDI and Nod now have separate variants of Light Infantry and Engineers
 	- Remade the "electrocution" infantry death animation (credit: Demo)
@@ -1121,6 +1123,10 @@ See changelog_tsclient.txt for changes made specifically to the CnCNet TS client
 	- New non-buildable units: Chem-Spray Infantry, Nod Technician (credit: Demo), Nod Officer (credit: Demo)
 	- New cracked and stony terrain sets for the temperate theater
 	- Completed the temperate slope set (two slope types were missing graphics)
+- Integrated new tools:
+	- MapTool
+	- Tunnel Drawer
+- Added all map tools into the editor's tools menu
 - Invisible Light Posts are now called Light Sources and have custom (in-editor only) graphics to help differentiate them from visible Light Posts
 - `INORNGLAMP` is now a negative orange light source, to differentiate it from the other orange light source `INORANLAMP`
 - Replaced Tiberium Tree terrain types with building types for improved functionality
@@ -1136,7 +1142,7 @@ See changelog_tsclient.txt for changes made specifically to the CnCNet TS client
 
 ### Client
 
-- Integrated with ReShade, a post-processing utility for additional visual effects. Enable it from the client settings.
+- Updated with new updater, better cross-platform support, and new player status icons
 - New game options for skirmish and/or multiplayer: 
 	- Sandbox: allows near-instant construction of units and buildings.
 	- Ion Storms: summons periodic Ion Storms.
@@ -1161,7 +1167,7 @@ See changelog_tsclient.txt for changes made specifically to the CnCNet TS client
 - Removed obsolete Red Alert leftovers from the terrain and smugde type lists
 - Cleaned up the animations list, fixing indices and removing duplicates
 - Restored the missing JEEP vehicle type for future use
-- Integrated with Vinifera, an open-source engine extension for Tiberian Sun (see https://github.com/Vinifera-Developers/Vinifera)
+- Integrated with [Vinifera](https://github.com/Vinifera-Developers/Vinifera), an open-source engine extension for Tiberian Sun
 - Updated game executable with latest TS patches (build 732ee9f, date 2022-11-01)
 - Restored and updated mission.ini and mission1.ini for future use
 - Updated CnC-DDraw to version 5.0.0.0

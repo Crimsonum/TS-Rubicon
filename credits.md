@@ -1,29 +1,29 @@
 # Credits
 **Tiberian Sun: Rubicon**
-- Created by [Legion 13](https://github.com/Legion-13), a group of modders sharing a common vision and passion for Tiberian Sun.
-- Built on the [CnCNet Tiberian Sun client package](https://github.com/CnCNet/cncnet-ts-client-package) (TSC). See also [TSC credits](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/credits.txt).
-- Powered by [Vinifera](https://github.com/Vinifera-Developers/Vinifera), an open-source community project extending the Tiberian Sun game engine.
-- Enhanced with community assets, tools, and contributions (see the list below).
 
 | Role | Who | Contributions |
 | --- | --- | --- |
 | Developer | Crimsonum | Founder, lead developer |
 | Developer | Demo | Lead voxel artist, misc. artist |
+| Contributor | Rampastring, Bittah Commander, CCHyper, & co.<br/>See [TSC credits](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/credits.txt) for more information | [CnCNet Tiberian Sun client package](https://github.com/CnCNet/cncnet-ts-client-package) (TSC) |
+| Contributor | CCHyper, tomsons26, Rampastring | [Vinifera](https://github.com/Vinifera-Developers/Vinifera) engine extension |
+| Contributor | Starkku, E1 Elite | [MapTool](https://github.com/Starkku/MapTool) |
+| Contributor | Q45 | Tunnel Drawer |
 | Contributor | areaSZ | Titan graphics |
 | Contributor | crosire & co. | ReShade |
 | Contributor | Henskelion | Several high-quality sound effects |
 | Contributor | Lin Kuei Ominae | Mammoth Mk. II graphics |
-| Contributor | Q45 | Tunnel Drawer |
-| Contributor | Starkku | MapTool |
 | Contributor | Stingerr | Tiberian Sun Mk. II assets |
 
-Thanks to all the wonderful people and organizations that have helped us on this journey:
+Special thanks to all the wonderful people and organizations that have helped us on this journey:
 - Apollo
 - Bittah Commander
 - CCHyper
+- derekplus (medalmonkey)
 - E1 Elite
 - Frank Razenberg (zzattack)
 - FunkyFr3sh
+- Holland
 - Kerbiter
 - Lin Kuei Ominae
 - Matthias Wagner (Matze)
