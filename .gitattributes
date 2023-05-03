@@ -1,2 +1,5 @@
-scores.mix filter=lfs diff=lfs merge=lfs -text
-scores01.mix filter=lfs diff=lfs merge=lfs -text
+Movies01.mix filter=lfs diff=lfs merge=lfs -text
+Movies02.mix filter=lfs diff=lfs merge=lfs -text
+Movies03.mix filter=lfs diff=lfs merge=lfs -text
+SCORES.MIX filter=lfs diff=lfs merge=lfs -text
+SCORES01.MIX filter=lfs diff=lfs merge=lfs -text

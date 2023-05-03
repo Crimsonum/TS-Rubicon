@@ -9,8 +9,9 @@
 | Contributor | CCHyper, tomsons26, Rampastring | [Vinifera](https://github.com/Vinifera-Developers/Vinifera) engine extension |
 | Contributor | Starkku, E1 Elite | [MapTool](https://github.com/Starkku/MapTool) |
 | Contributor | Q45 | Tunnel Drawer |
-| Contributor | areaSZ | Titan graphics |
 | Contributor | crosire & co. | ReShade |
+| Contributor | areaSZ | Titan graphics |
+| Contributor | Bittah Commander | Tech Array graphics |
 | Contributor | Henskelion | Several high-quality sound effects |
 | Contributor | Lin Kuei Ominae | Mammoth Mk. II graphics |
 | Contributor | Stingerr | Tiberian Sun Mk. II assets |

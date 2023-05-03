@@ -10,7 +10,7 @@
 9=Second Objective: Capture the 3 control stations
 10=to shut down the laser fences and firestorm defense
 11=system protecting CABAL.@@
-12=Third Objective: Destroy CABAL's core.
+12=Third Objective: Destroy CABAL’s core.
 
 [General]
 MinimumAIDefensiveTeams=2,2,2
@@ -165,12 +165,22 @@ IonStorms=no
 Meteorites=no
 Visceroids=no
 
+[Briefing]
+1=This is it Commander! Take out CABAL fast and hard: No mercy and no
+2=surrender. Find a way to get inside his defenses and take out the core.
+3=GDI forces are distracting CABAL and now is the perfect time to crush
+4=CABAL once and for all.@ DATA LINK CLOSED.@@ First Objective: Build your
+5=base and survive the initial onslaught from CABAL.@@ Second Objective:
+6=Capture the 3 control stations to shut down the laser fences and
+7=firestorm defense system protecting CABAL.@@ Third Objective: Destroy
+8=CABAL’s core.
+
 [Basic]
 RequiredAddOn=1
 SpeechSide=GDI
 NextScenario=Maps\Missions\fsnod08.map
 AltNextScenario=Maps\Missions\GDI9C.MAP
-Name=NOD 09 [FS]: Core of the Problem
+Name=NOD 09:Core of the Problem
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=yes
@@ -3924,7 +3934,7 @@ LocalSize=5,7,122,108
 1044880=Cabal,CAARAY,256,227,123,0,08D9B560,0,0,1,0,0,None,None,None,0,0
 1044889=Neutral,CABHUT,256,208,122,0,None,0,0,1,0,0,None,None,None,0,0
 1044890=Cabal,GAARTY,256,154,46,0,None,1,0,1,0,0,None,None,None,0,0
-1044891=Cabal,CORE,256,125,45,0,08C805C0,0,0,1,0,0,None,None,None,1,0
+1044891=Cabal,CORE,256,124,44,0,08C805C0,0,0,1,0,0,None,None,None,1,0
 1044898=Cabal,CROB,256,128,45,0,None,0,1,1,0,0,None,None,None,1,1
 1044903=Cabal,AAOB,256,123,45,0,None,0,1,1,0,0,None,None,None,1,1
 1044908=Cabal,DDEFD,256,125,48,0,08C80400,1,0,1,0,0,None,None,None,0,1

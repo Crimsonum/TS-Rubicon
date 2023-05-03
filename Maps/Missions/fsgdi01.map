@@ -113,7 +113,7 @@ RequiredAddOn=1
 SpeechSide=GDI
 NextScenario=Maps\Missions\FSGDI02.MAP
 AltNextScenario=Maps\Missions\GDI9C.MAP
-Name=GDI 01 [FS]: Recover the Tacitus
+Name=FS GDI 01: Recover the Tacitus
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=no
@@ -1299,9 +1299,9 @@ LocalSize=3,4,69,42
 4=Special,MUTANT3,256,44,106,4,Guard,0,076111B0,0,-1,0,1,1
 5=Special,MWMN,256,45,99,4,Guard,0,076111B0,0,-1,0,1,1
 6=Special,MUTANT,256,48,103,2,Guard,0,076111B0,0,-1,0,1,1
-7=Nod,E1,256,43,70,2,Area Guard,0,None,0,-1,0,1,1
+7=Nod,E1NOD,256,43,70,2,Area Guard,0,None,0,-1,0,1,1
 8=Nod,E3,256,46,70,2,Area Guard,0,None,0,-1,0,1,1
-9=Nod,E1,256,93,59,2,Area Guard,128,None,0,-1,0,1,1
+9=Nod,E1NOD,256,93,59,2,Area Guard,128,None,0,-1,0,1,1
 
 [Structures]
 1019207=Neutral,CABHUT,256,43,91,0,None,0,0,1,0,0,None,None,None,0,0
@@ -1752,7 +1752,7 @@ Name=Harrass
 Name=Nod Explorers 1
 0=1,SAPC
 1=2,E3
-2=2,E1
+2=2,E1NOD
 Group=-1
 
 [07612B70]
@@ -1765,7 +1765,7 @@ Group=-1
 [0AFCE410]
 Name=Nod Team 2
 0=1,SAPC
-1=2,E1
+1=2,E1NOD
 2=2,E3
 Group=-1
 
@@ -1862,7 +1862,7 @@ Group=-1
 
 [073D5E70]
 Name=Hunters
-0=2,E1
+0=2,E1NOD
 1=1,E3
 Group=0
 

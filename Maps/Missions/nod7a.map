@@ -78,7 +78,7 @@ Visceroids=no
 [Basic]
 NextScenario=Maps\Missions\GDI2A.map
 AltNextScenario=Maps\Missions\GDI9C.MAP
-Name=NOD 7A: Destroy the GDI Research Facility
+Name=Destroy the Research Facility
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=no
@@ -5063,7 +5063,7 @@ TaskForce=08823D00
 0B754AC0=1,40,0,0
 0B754360=1,36,0,0
 0AA2E5E0=1,1,0,1
-07F26030=1,48,0,0
+07F26030=1,48,0,10000000
 08A01920=1,48,0,0
 0A911540=1,13,0,180
 0A5E7620=1,48,0,0

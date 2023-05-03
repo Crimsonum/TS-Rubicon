@@ -8,7 +8,7 @@
 7=First Objective: Warn the local civilians of
 8=the CABAL threat.@@
 9=Second Objective: Establish a base and
-10=destroy CABAL's forces.
+10=destroy CABAL’s forces.
 
 [SpecialFlags]
 TiberiumGrows=no
@@ -214,12 +214,19 @@ LightRedTint=0.01
 LightGreenTint=0.5
 LightBlueTint=0.01
 
+[Briefing]
+1=We have lost communication with our base outside of Trondheim. Scout the
+2=area and determine the cause of this interruption. We have no tactical
+3=data on CABAL's forces in that area and we need information.@ END
+4=TRANSMISSION.@@ First Objective: Warn the local civilians of the CABAL
+5=threat.@@ Second Objective: Establish a base and destroy CABAL’s forces.
+
 [Basic]
 RequiredAddOn=1
 SpeechSide=GDI
 NextScenario=Maps\Missions\FSGDI08.map
 AltNextScenario=Maps\Missions\GDI9C.MAP
-Name=GDI 07 [FS]: The Cyborgs are Coming
+Name=GDI 07: The Cyborgs are Coming
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=no
@@ -3765,9 +3772,9 @@ Name=1 subapc
 Group=-1
 
 [0AD8EAB0]
-Name=3 light inf 2 rockets
+Name=3 light inf 2 discs
 0=3,E1
-1=2,E3
+1=2,E2
 Group=-1
 
 [0AD57A10]
@@ -3813,9 +3820,9 @@ Name=6 tick tanks
 Group=-1
 
 [0B8732B0]
-Name=1 inf 1 rocket
+Name=1 inf 1 disc
 0=1,E1
-1=1,E3
+1=1,E2
 Group=-1
 
 [0B875750]
@@ -7481,7 +7488,7 @@ TaskForce=0CDA6110
 0B75B8C0=1,10,0,1
 0ACA5670=1,36,0,15
 0BA44090=2,36,0,2,13,0,30
-0B732510=2,36,0,11,20,0,0	;0 refers to HARV index
+0B732510=2,36,0,11,20,0,2
 0B75BF10=3,37,0,15,51,0,300,36,0,11
 0B75B6A0=3,37,0,15,51,0,300,36,0,11
 0B75B410=3,37,0,15,51,0,400,36,0,11

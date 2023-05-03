@@ -1,21 +1,3 @@
-[Briefing]
-1=Since CABAL has turned on us we are suffering a
-2=communications blackout. We are forced to try and
-3=obtain GDI's EVA technology. There is a small GDI
-4=airbase in this sector. Get your engineer into
-5=their radar facility to steal an EVA unit. Create
-6=a distraction to occupy GDI air units while you
-7=steal the EVA unit.@@
-8=We also have a new unit for you: the Mobile Stealth
-9=Generator is now operational. Use it wisely.@
-10=DATA LINK CLOSED.@@
-11=First Objective: Reconnoiter the area to find the
-12=GDI base and civilian towns.@@
-13=Second Objective: Create distractions to draw away
-14=the GDI base's air support.@@
-15=Third Objective: Get an engineer into GDI's radar
-16=facility to steal the EVA unit.
-
 [SpecialFlags]
 TiberiumGrows=no
 TiberiumSpreads=yes
@@ -40,11 +22,23 @@ CloakRadiusInCells=15
 [CrateRules]
 WoodCrate=HealBase
 
+[Briefing]
+1=Since CABAL has turned on us we are suffering a communications blackout.
+2=We are forced to try and obtain GDI's EVA technology. There is a small
+3=GDI airbase in this sector. Get your engineer into their radar facility
+4=to steal an EVA unit. Create a distraction to occupy GDI air units while
+5=you steal the EVA unit.@@ We also have a new unit for you: the Mobile
+6=Stealth Generator is now operational. Use it wisely.@ DATA LINK CLOSED.@@
+7=First Objective: Reconnoiter the area to find the GDI base and civilian
+8=towns.@@ Second Objective: Create distractions to draw away the GDI
+9=base's air support.@@ Third Objective: Get an engineer into GDI's radar
+10=facility to steal the EVA unit.
+
 [Basic]
 RequiredAddOn=1
 SpeechSide=Nod
 NextScenario=Maps\Missions\FSNOD07.map
-Name=NOD 06 [FS]: The Needs of the Many!
+Name=NOD 06: The Needs of the Many
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=no

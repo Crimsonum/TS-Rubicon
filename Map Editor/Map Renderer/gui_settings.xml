@@ -7,9 +7,9 @@
       <setting name="enginera2" serializeAs="String">False</setting>
       <setting name="enginets" serializeAs="String">False</setting>
       <setting name="enginefs" serializeAs="String">True</setting>
-      <setting name="windowlocation" serializeAs="String">364, 972</setting>
+      <setting name="windowlocation" serializeAs="String">2329, 711</setting>
       <setting name="outputjpg" serializeAs="String">False</setting>
-      <setting name="outputjpgq" serializeAs="String">90</setting>
+      <setting name="outputjpgq" serializeAs="String">95</setting>
       <setting name="outputpng" serializeAs="String">False</setting>
       <setting name="outputpngq" serializeAs="String">9</setting>
       <setting name="outputthumb" serializeAs="String">True</setting>
@@ -17,8 +17,8 @@
       <setting name="thumbdimensions" serializeAs="String">800,500</setting>
       <setting name="thumbpng" serializeAs="String">True</setting>
       <setting name="modconfig" serializeAs="String">True</setting>
-      <setting name="modconfigfile" serializeAs="String">C:\Command &amp; Conquer\Tiberian Sun Rubicon (Backup)\Map Editor\Map Renderer\modconfig.xml</setting>
-      <setting name="input" serializeAs="String">C:\Command &amp; Conquer\Tiberian Sun Rubicon (Backup)\Maps\Multiplayer\terrace.map</setting>
+      <setting name="modconfigfile" serializeAs="String">D:\Users\Jani\Google Drive\Rubicon\Map Editor\Map Renderer\modconfig.xml</setting>
+      <setting name="input" serializeAs="String">D:\Users\Jani\Google Drive\Rubicon\Maps\Multiplayer\g_canyon.map</setting>
       <setting name="mixdir" serializeAs="String"></setting>
       <setting name="output" serializeAs="String"></setting>
       <setting name="outputauto" serializeAs="String">False</setting>
@@ -39,7 +39,7 @@
       <setting name="compresstiles" serializeAs="String">False</setting>
       <setting name="icegrowth" serializeAs="String">False</setting>
       <setting name="tunnelpaths" serializeAs="String">False</setting>
-      <setting name="tunnelpos" serializeAs="String">True</setting>
+      <setting name="tunnelpos" serializeAs="String">False</setting>
       <setting name="diagwindow" serializeAs="String">False</setting>
       <setting name="backup" serializeAs="String">True</setting>
       <setting name="skipupdatecheck" serializeAs="String">True</setting>

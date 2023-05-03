@@ -61,7 +61,7 @@ Visceroids=no
 [Basic]
 NextScenario=Maps\Missions\GDI2A.map
 AltNextScenario=Maps\Missions\GDI9C.MAP
-Name=NOD 12B: Illegal Data Transfer
+Name=Illegal Data Transfer
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=no
@@ -1336,10 +1336,10 @@ LocalSize=22,4,56,50
 
 [Infantry]
 0=Nod,CHAMSPY,256,77,101,2,Guard,160,07D9E390,0,-1,0,1,1
-1=Nod,E1,256,78,102,3,Guard,160,None,0,-1,0,1,1
-2=Nod,E1,256,78,103,4,Guard,160,None,0,-1,0,1,1
-3=Nod,E1,256,79,104,4,Guard,160,None,0,-1,0,1,1
-4=Nod,E1,256,82,108,4,Guard,160,None,0,-1,0,1,1
+1=Nod,E1NOD,256,78,102,3,Guard,160,None,0,-1,0,1,1
+2=Nod,E1NOD,256,78,103,4,Guard,160,None,0,-1,0,1,1
+3=Nod,E1NOD,256,79,104,4,Guard,160,None,0,-1,0,1,1
+4=Nod,E1NOD,256,82,108,4,Guard,160,None,0,-1,0,1,1
 5=GDI,E1,256,60,66,2,Guard,160,None,0,-1,0,1,1
 6=GDI,E1,256,61,67,2,Guard,160,None,0,-1,0,1,0
 7=GDI,E1,256,60,67,2,Guard,160,None,0,-1,0,1,0

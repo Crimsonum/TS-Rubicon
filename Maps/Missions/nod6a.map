@@ -165,7 +165,7 @@ Visceroids=no
 [Basic]
 NextScenario=Maps\Missions\GDI2A.map
 AltNextScenario=Maps\Missions\GDI9C.MAP
-Name=NOD 6A: Sheep's Clothing
+Name=Sheep's Clothing
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=no
@@ -2053,9 +2053,9 @@ LocalSize=2,5,76,73
 22=Mutants,MUTANT,256,68,59,3,Area Guard,160,None,0,-1,0,1,0
 23=Mutants,MUTANT,256,66,64,2,Area Guard,96,None,0,-1,0,0,0
 24=Mutants,MUTANT,256,81,56,2,Area Guard,192,None,0,-1,0,0,0
-25=Nod,E1,256,77,137,2,Guard,0,None,0,-1,0,1,1
-26=Nod,E1,256,78,136,2,Guard,0,None,0,-1,0,1,1
-27=Nod,E1,256,83,137,2,Guard,0,None,0,-1,0,1,1
+25=Nod,E1NOD,256,77,137,2,Guard,0,None,0,-1,0,1,1
+26=Nod,E1NOD,256,78,136,2,Guard,0,None,0,-1,0,1,1
+27=Nod,E1NOD,256,83,137,2,Guard,0,None,0,-1,0,1,1
 28=Mutants,DOGGIE,256,108,83,3,Area Guard,0,0A8195B0,0,-1,0,1,0
 
 [Aircraft]

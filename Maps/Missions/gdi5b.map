@@ -55,7 +55,7 @@ Visceroids=no
 [Basic]
 NextScenario=Maps\Missions\scg06ea.map
 AltNextScenario=Maps\Missions\GDI9C.MAP
-Name=GDI 5B: Rescue Tratos (A)
+Name=Rescue Tratos
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=no
@@ -124,21 +124,161 @@ IonBlue=1.000000
 IonGround=0.000000
 IonLevel=0.000000
 
+[Forgotten]
+IQ=0
+Edge=North
+Side=Forgotten
+Color=Green
+Allies=Forgotten
+Credits=0
+ActsLike=0
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[CABAL]
+IQ=0
+Edge=North
+Side=CABAL
+Color=DarkBlue
+Allies=CABAL
+Credits=0
+ActsLike=3
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[DummyGDI]
+IQ=0
+Edge=North
+Side=GDI
+Color=Gold
+Allies=DummyGDI
+Credits=0
+ActsLike=0
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[DummyNod]
+IQ=0
+Edge=North
+Side=Nod
+Color=DarkRed
+Allies=DummyNod
+Credits=0
+ActsLike=1
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[DummyForg]
+IQ=0
+Edge=North
+Side=Forgotten
+Color=Green
+Allies=DummyForg
+Credits=0
+ActsLike=0
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[DummyCABAL]
+IQ=0
+Edge=North
+Side=CABAL
+Color=DarkBlue
+Allies=DummyCABAL
+Credits=0
+ActsLike=3
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[House10]
+IQ=0
+Edge=North
+Side=GDI
+Color=Gold
+Allies=GDI
+Credits=0
+ActsLike=0
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[House11]
+IQ=0
+Edge=North
+Side=GDI
+Color=Gold
+Allies=GDI
+Credits=0
+ActsLike=0
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[House12]
+IQ=0
+Edge=North
+Side=GDI
+Color=Gold
+Allies=GDI
+Credits=0
+ActsLike=0
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
+[House13]
+IQ=0
+Edge=North
+Side=GDI
+Color=Gold
+Allies=GDI
+Credits=0
+ActsLike=0
+NodeCount=0
+TechLevel=1
+PercentBuilt=0
+PlayerControl=no
+
 [Houses]
 0=GDI
 1=Nod
-2=Neutral
-3=Special
-4=Nod Prison
-5=Nod Base
-6=Nod Outpost
-7=Mutants
-8=Beasties
-9=Nod Prison 2
-10=GDI assist
-11=Tratos
-12=Mutants X
-13=Umagon
+2=Forgotten
+3=CABAL
+4=Neutral
+5=Special
+6=DummyGDI
+7=DummyNod
+8=DummyForg
+9=DummyCABAL
+10=House10
+11=House11
+12=House12
+13=House13
+14=Nod Prison
+15=Nod Base
+16=Nod Outpost
+17=Mutants
+18=Beasties
+19=Nod Prison 2
+20=GDI assist
+21=Tratos
+22=Mutants X
+23=Umagon
 
 [GDI]
 Credits=50
@@ -2139,7 +2279,7 @@ LocalSize=3,8,86,64
 22=Nod,TTNK,256,122,113,128,Sleep,None,0,-1,0,-1,0,0
 
 [Infantry]
-0=Nod,E1,256,113,91,4,Guard,0,None,0,-1,0,0,1
+0=Nod,E1NOD,256,113,91,4,Guard,0,None,0,-1,0,0,1
 1=Beasties,DOGGIE,256,131,92,3,Guard,160,092B8030,0,0,0,1,1
 2=Nod Base,E3,256,82,88,2,Area Guard,160,None,0,-1,0,1,1
 3=Nod Base,E3,256,75,83,4,Area Guard,160,None,0,-1,0,1,1
@@ -2148,45 +2288,45 @@ LocalSize=3,8,86,64
 6=Nod Base,E3,256,68,107,4,Area Guard,160,None,0,-1,0,1,1
 7=Nod Base,E3,256,82,75,2,Area Guard,160,None,0,-1,0,1,1
 8=Nod Base,E3,256,86,75,3,Area Guard,160,None,0,-1,0,1,1
-9=Nod Base,E1,256,86,91,2,Area Guard,160,None,0,-1,0,1,1
-10=Nod Base,E1,256,78,102,3,Area Guard,160,None,0,-1,0,1,1
-11=Nod Base,E1,256,80,101,4,Area Guard,160,None,0,-1,0,1,1
-12=Nod Base,E1,256,71,108,3,Area Guard,160,None,0,-1,0,1,1
-13=Nod Base,E1,256,74,108,3,Area Guard,160,None,0,-1,0,1,1
-14=Nod Prison,E1,256,96,119,2,Guard,160,None,0,-1,0,1,1
-15=Nod,E1,256,142,84,2,Guard,160,0A799920,0,-1,0,1,1
-16=Nod,E1,256,125,91,3,Guard,160,None,0,1,0,1,0
-17=Nod,E1,256,125,90,2,Guard,160,None,0,1,0,1,0
-18=Nod Base,E1,256,150,85,3,Area Guard,160,None,0,-1,0,1,1
-19=Nod Base,E1,256,149,86,4,Area Guard,160,None,0,-1,0,1,1
-20=Nod Base,E1,256,148,84,4,Area Guard,160,None,0,-1,0,1,1
+9=Nod Base,E1NOD,256,86,91,2,Area Guard,160,None,0,-1,0,1,1
+10=Nod Base,E1NOD,256,78,102,3,Area Guard,160,None,0,-1,0,1,1
+11=Nod Base,E1NOD,256,80,101,4,Area Guard,160,None,0,-1,0,1,1
+12=Nod Base,E1NOD,256,71,108,3,Area Guard,160,None,0,-1,0,1,1
+13=Nod Base,E1NOD,256,74,108,3,Area Guard,160,None,0,-1,0,1,1
+14=Nod Prison,E1NOD,256,96,119,2,Guard,160,None,0,-1,0,1,1
+15=Nod,E1NOD,256,142,84,2,Guard,160,0A799920,0,-1,0,1,1
+16=Nod,E1NOD,256,125,91,3,Guard,160,None,0,1,0,1,0
+17=Nod,E1NOD,256,125,90,2,Guard,160,None,0,1,0,1,0
+18=Nod Base,E1NOD,256,150,85,3,Area Guard,160,None,0,-1,0,1,1
+19=Nod Base,E1NOD,256,149,86,4,Area Guard,160,None,0,-1,0,1,1
+20=Nod Base,E1NOD,256,148,84,4,Area Guard,160,None,0,-1,0,1,1
 21=Umagon,UMAGON,256,159,78,3,Guard,160,0A7EFE80,0,-1,0,1,1
 22=Mutants,GHOST,256,158,76,4,Guard,160,0A947070,0,-1,0,1,1
 23=Mutants,MHIJACK,256,160,78,2,Guard,160,07B26240,0,-1,0,1,1
-24=Nod Outpost,E1,256,114,75,4,Guard,0,None,0,-1,0,1,1
-25=Nod Outpost,E1,256,114,74,2,Guard,0,None,0,-1,0,1,1
-26=Nod,E1,256,146,79,3,Area Guard,128,None,0,-1,0,0,0
-27=Nod,E1,256,147,79,3,Area Guard,128,None,0,-1,0,0,0
-28=Nod,E1,256,142,85,2,Guard,64,None,0,-1,0,0,0
-29=Nod,E1,256,143,86,2,Guard,64,None,0,-1,0,0,0
-30=Nod,E1,256,101,83,2,Guard,0,None,0,-1,0,0,1
-31=Nod Prison,E1,256,90,121,3,Guard,0,None,0,-1,0,1,1
-32=Nod Base,E1,256,83,76,2,Area Guard,0,None,0,-1,0,1,1
-33=Nod Base,E1,256,80,99,3,Area Guard,0,None,0,-1,0,1,1
-34=Nod Base,E1,256,80,103,4,Area Guard,0,None,0,-1,0,1,1
-35=Nod Base,E1,256,77,102,2,Area Guard,0,None,0,-1,0,1,1
-36=Nod Base,E1,256,71,107,4,Area Guard,0,None,0,-1,0,1,1
-37=Nod Base,E1,256,66,90,3,Area Guard,0,None,0,-1,0,1,1
-38=Nod Base,E1,256,67,90,3,Area Guard,0,None,0,-1,0,1,1
-39=Nod Base,ENGINEER,256,81,99,4,Guard,0,None,0,-1,0,1,1
-40=Nod Base,ENGINEER,256,76,102,2,Guard,0,None,0,-1,0,1,1
-41=Nod Prison,E1,256,110,122,3,Guard,0,None,0,0,0,1,1
-42=Nod Prison,E1,256,110,123,3,Guard,0,None,0,0,0,1,1
-43=Nod,E1,256,111,112,2,Guard,64,None,0,-1,0,1,1
-44=Nod,E1,256,112,114,3,Guard,0,None,0,-1,0,1,1
-45=Nod,E1,256,112,113,2,Guard,128,None,0,-1,0,1,1
-46=Nod Prison,E1,256,94,125,4,Guard,0,None,0,-1,0,1,1
-47=Nod,E1,256,122,114,3,Guard,160,None,0,-1,0,1,1
+24=Nod Outpost,E1NOD,256,114,75,4,Guard,0,None,0,-1,0,1,1
+25=Nod Outpost,E1NOD,256,114,74,2,Guard,0,None,0,-1,0,1,1
+26=Nod,E1NOD,256,146,79,3,Area Guard,128,None,0,-1,0,0,0
+27=Nod,E1NOD,256,147,79,3,Area Guard,128,None,0,-1,0,0,0
+28=Nod,E1NOD,256,142,85,2,Guard,64,None,0,-1,0,0,0
+29=Nod,E1NOD,256,143,86,2,Guard,64,None,0,-1,0,0,0
+30=Nod,E1NOD,256,101,83,2,Guard,0,None,0,-1,0,0,1
+31=Nod Prison,E1NOD,256,90,121,3,Guard,0,None,0,-1,0,1,1
+32=Nod Base,E1NOD,256,83,76,2,Area Guard,0,None,0,-1,0,1,1
+33=Nod Base,E1NOD,256,80,99,3,Area Guard,0,None,0,-1,0,1,1
+34=Nod Base,E1NOD,256,80,103,4,Area Guard,0,None,0,-1,0,1,1
+35=Nod Base,E1NOD,256,77,102,2,Area Guard,0,None,0,-1,0,1,1
+36=Nod Base,E1NOD,256,71,107,4,Area Guard,0,None,0,-1,0,1,1
+37=Nod Base,E1NOD,256,66,90,3,Area Guard,0,None,0,-1,0,1,1
+38=Nod Base,E1NOD,256,67,90,3,Area Guard,0,None,0,-1,0,1,1
+39=Nod Base,ENGINOD,256,81,99,4,Guard,0,None,0,-1,0,1,1
+40=Nod Base,ENGINOD,256,76,102,2,Guard,0,None,0,-1,0,1,1
+41=Nod Prison,E1NOD,256,110,122,3,Guard,0,None,0,0,0,1,1
+42=Nod Prison,E1NOD,256,110,123,3,Guard,0,None,0,0,0,1,1
+43=Nod,E1NOD,256,111,112,2,Guard,64,None,0,-1,0,1,1
+44=Nod,E1NOD,256,112,114,3,Guard,0,None,0,-1,0,1,1
+45=Nod,E1NOD,256,112,113,2,Guard,128,None,0,-1,0,1,1
+46=Nod Prison,E1NOD,256,94,125,4,Guard,0,None,0,-1,0,1,1
+47=Nod,E1NOD,256,122,114,3,Guard,160,None,0,-1,0,1,1
 48=Nod Base,CYBORG,256,87,93,2,Area Guard,0,None,0,-1,0,1,1
 49=Nod Base,CYBORG,256,79,102,3,Area Guard,0,None,0,-1,0,1,1
 50=Nod Base,CYBORG,256,80,99,4,Area Guard,0,None,0,-1,0,1,1
@@ -2559,8 +2699,8 @@ Name=Dig under fence
 
 [08FDB160]
 Name=Attack prison power
-0=46,131089
-1=46,131110
+0=46,131077
+1=46,131124
 2=0,1
 
 [0A823470]
@@ -2590,7 +2730,7 @@ Name=Attk transport
 
 [0927D370]
 Name=Tratos to AA
-0=20,12
+0=20,22
 1=39,15
 2=37,0
 
@@ -2604,24 +2744,24 @@ Name=Umagon leave
 
 [08AD9860]
 Name=Mutant delete
-0=20,12
+0=20,22
 1=37,0
 
 [08D7FE00]
 Name=Attack CY
-0=46,131072
-1=46,131084
+0=46,131074
+1=46,131072
 
 [08168A50]
 Name=Attack barracks & power
-0=46,131075
+0=46,131079
 1=49,0
-2=46,0
+2=46,2
 
 [0AAE3890]
 Name=APC attack base
 0=14,0
-1=47,0
+1=47,2
 2=8,2
 3=49,0
 4=11,14
@@ -2660,7 +2800,7 @@ Name=Guard AV
 Name=Attack via front
 0=3,49
 1=3,23
-2=46,0
+2=46,2
 3=49,0
 
 [09E7D5F0]
@@ -2680,7 +2820,7 @@ Name=To K and repair / hunt
 
 [0AB1ADC0]
 Name=Attack CY
-0=46,12
+0=46,0
 1=49,0
 
 [08CF8D30]
@@ -2772,12 +2912,12 @@ Group=-1
 [0920F550]
 Name=NOD lt inf team
 0=1,CYBORG
-1=2,E1
+1=2,E1NOD
 Group=-1
 
 [082FBD40]
 Name=1 lt inf
-0=1,E1
+0=1,E1NOD
 Group=-1
 
 [08DC3C70]
@@ -2803,12 +2943,12 @@ Group=-1
 
 [09243D40]
 Name=2 inf
-0=2,E1
+0=2,E1NOD
 Group=-1
 
 [09F7C330]
 Name=3 lt inf
-0=3,E1
+0=3,E1NOD
 Group=-1
 
 [07C75270]
@@ -2819,17 +2959,17 @@ Group=-1
 [08CB1B20]
 Name=heavy patrol
 0=1,BGGY
-1=2,E1
+1=2,E1NOD
 Group=-1
 
 [084562B0]
 Name=Engineer
-0=1,ENGINEER
+0=1,ENGINOD
 Group=-1
 
 [0AE14F60]
 Name=2 lt, 1 bug
-0=2,E1
+0=2,E1NOD
 1=1,BGGY
 Group=-1
 
@@ -2860,7 +3000,7 @@ Group=-1
 
 [084D9BB0]
 Name=Attk transport 1
-0=2,E1
+0=2,E1NOD
 1=1,E3
 2=1,CYBORG
 Group=-1
@@ -2892,13 +3032,13 @@ Group=-1
 
 [0A54C170]
 Name=3 lt inf, 1 rock
-0=3,E1
+0=3,E1NOD
 1=1,E3
 Group=-1
 
 [0AAE23A0]
 Name=Sub APC & 3 engs
-0=3,ENGINEER
+0=3,ENGINOD
 1=1,SAPC
 Group=-1
 
@@ -2930,7 +3070,7 @@ Group=-1
 
 [09E35E00]
 Name=3 lt, 2 rock
-0=3,E1
+0=3,E1NOD
 1=2,E3
 Group=-1
 
@@ -4922,12 +5062,12 @@ TaskForce=0A562AB0
 
 [Events]
 08F66470=2,48,0,0,37,0,0
-08F66210=1,1,0,13
+08F66210=1,1,0,23
 0AD77F80=1,6,0,0
 0ABB5D00=3,13,0,3,36,0,5,37,0,0
 0A795CF0=1,0,0,0
-0AEB01E0=1,1,0,7
-0AEB5450=1,1,0,13
+0AEB01E0=1,1,0,17
+0AEB5450=1,1,0,23
 08F67EC0=2,14,0,0,37,0,0
 0A7FF600=1,48,0,0
 099E14C0=1,47,0,0
@@ -4942,14 +5082,14 @@ TaskForce=0A562AB0
 071D7F80=2,35,0,0,37,0,0
 09702F20=1,36,0,7
 0ABD5F80=1,36,0,17
-09705D70=1,1,0,7
+09705D70=1,1,0,17
 0A793BA0=1,36,0,8
 0A79D0E0=1,4,0,0
 09F0EF80=1,36,0,9
 09F0E7F0=2,36,0,9,13,0,6
 07B267A0=1,29,0,0
 0932F280=1,7,0,0
-09FE6160=1,26,0,7
+09FE6160=1,26,0,17
 09FE5CD0=1,6,0,0
 09F9E8C0=1,36,0,10
 0974EA00=1,6,0,0
@@ -4957,19 +5097,19 @@ TaskForce=0A562AB0
 09EE82E0=1,47,0,5
 095F5780=1,47,0,9
 095F5360=1,47,0,13
-06FC5580=1,1,0,7
+06FC5580=1,1,0,17
 09EBE3D0=1,4,0,0
-070D8050=1,1,0,7
+070D8050=1,1,0,17
 094AF1A0=2,13,0,2,36,0,5
-0A108030=1,1,0,9
+0A108030=1,1,0,19
 0848C340=1,0,0,0
 0A7F7720=1,48,0,0
-0A7F7430=1,1,0,7
-0AC1E030=1,1,0,6
+0A7F7430=1,1,0,17
+0AC1E030=1,1,0,16
 0AE176F0=1,48,0,0
 0AD69720=1,36,0,6
 0AD6FE80=2,36,0,6,13,0,3
-0AD95F80=1,1,0,7
+0AD95F80=1,1,0,17
 0ADDA380=2,36,0,6,13,0,2
 083F86C0=2,36,0,6,13,0,1
 0A824BC0=2,13,0,15,36,0,14
@@ -4977,28 +5117,28 @@ TaskForce=0A562AB0
 0A822860=1,0,0,0
 0ADA0F80=1,48,0,0
 0A827780=1,35,0,0
-09596760=1,1,0,11
+09596760=1,1,0,21
 0AEB4DC0=2,36,0,0,13,0,4
 0999E5B0=2,13,0,2,36,0,9
 0A5EF770=2,13,0,3,36,0,16
 0A5ED940=1,48,0,0
-08D7FD00=1,19,0,12
+08D7FD00=1,19,0,0
 080A14C0=1,44,0,0
 098F4F80=3,13,0,5,36,0,9,11,0,0
-098F49F0=2,11,0,1,11,0,5
+098F49F0=2,11,0,1,11,0,15
 076722E0=1,36,0,9
-0A53D9D0=1,19,0,1
+0A53D9D0=1,19,0,10
 0AB31C00=2,13,0,240,36,0,9
 0A5FF860=2,13,0,4,36,0,17
 0A5FF300=2,13,0,10,36,0,17
 0ABAD7E0=1,36,0,14
-091EA0B0=1,1,0,7
-09C9CC80=1,26,0,13
-09C9F900=1,1,0,13
-09CA0740=1,1,0,13
-09CA1EF0=1,1,0,13
-09CA1D70=1,1,0,13
-09CD5070=1,1,0,13
+091EA0B0=1,1,0,17
+09C9CC80=1,26,0,23
+09C9F900=1,1,0,23
+09CA0740=1,1,0,23
+09CA1EF0=1,1,0,23
+09CA1D70=1,1,0,23
+09CD5070=1,1,0,23
 09A0AF80=2,13,0,13,36,0,17
 0A4C9740=2,36,0,14,13,0,6
 0A79C560=1,36,0,12
@@ -5019,18 +5159,18 @@ TaskForce=0A562AB0
 099EAE00=2,2,0,0,0,0,0,0,A,21,0,287,0,0,0,0,A
 0A93BF80=1,2,0,0,0,0,0,0,A
 09DFE5E0=3,56,0,4,0,0,0,0,A,19,0,84,0,0,0,0,A,4,1,08FD92B0,0,0,0,0,A
-09D11310=4,19,0,24,0,0,0,0,A,7,1,0920D820,0,0,0,0,A,6,0,4,0,0,0,0,A,4,1,093472B0,0,0,0,0,A
+09D11310=4,19,0,24,0,0,0,0,A,7,1,0920D820,0,0,0,0,A,6,0,14,0,0,0,0,A,4,1,093472B0,0,0,0,0,A
 0AAE15C0=4,21,0,3,0,0,0,0,A,55,0,1,0,0,0,0,AA,7,1,08DC2B10,0,0,0,0,A,17,0,26,0,0,0,0,AA
 071CFDC0=1,2,0,0,0,0,0,0,A
 0A8201A0=1,4,1,08FDCB10,0,0,0,0,A
-0960E800=2,81,0,0,0,0,0,0,A,14,0,7,0,0,0,0,A
+0960E800=2,81,0,0,0,0,0,0,A,14,0,17,0,0,0,0,A
 071D7F80=3,52,0,3,0,0,0,0,A,56,0,7,0,0,0,0,A,56,0,17,0,0,0,0,A
 09702F20=2,7,1,08FE2890,0,0,0,0,A,19,0,73,0,0,0,0,A
 0ABD5F80=1,21,0,136,0,0,0,0,A
 09705D70=1,17,0,12,0,0,0,0,M
 0A793BA0=2,81,0,0,0,0,0,0,A,4,1,08FD9F50,0,0,0,0,A
 0A79D0E0=2,4,1,082FC5D0,0,0,0,0,A,17,0,35,0,0,0,0,AJ
-09F0EF80=6,21,0,10,0,0,0,0,A,80,1,091F52F0,0,0,0,0,AE,55,0,0,0,0,0,0,AE,47,0,0,0,0,0,0,A,38,0,1,0,0,0,0,A,38,0,5,0,0,0,0,A
+09F0EF80=6,21,0,10,0,0,0,0,A,80,1,091F52F0,0,0,0,0,AE,55,0,0,0,0,0,0,AE,47,0,0,0,0,0,0,A,38,0,1,0,0,0,0,A,38,0,15,0,0,0,0,A
 09F0E7F0=2,80,1,08DCEAE0,0,0,0,0,AE,36,0,0,0,0,0,0,A
 07B267A0=1,2,0,0,0,0,0,0,A
 0932F280=1,57,0,4,0,0,0,0,A
@@ -5044,7 +5184,7 @@ TaskForce=0A562AB0
 095F5360=1,56,0,10,0,0,0,0,A
 06FC5580=1,4,1,093E9500,0,0,0,0,A
 09EBE3D0=3,19,0,30,0,0,0,0,A,81,0,0,0,0,0,0,A,4,1,08FDB230,0,0,0,0,A
-070D8050=3,17,0,10,0,0,0,0,K,4,1,08CB1E00,0,0,0,0,A,3,0,5,0,0,0,0,A
+070D8050=3,17,0,10,0,0,0,0,K,4,1,08CB1E00,0,0,0,0,A,3,0,15,0,0,0,0,A
 094AF1A0=1,62,0,0,0,0,0,0,A
 0A108030=1,80,1,08FE2890,0,0,0,0,J
 0848C340=4,32,0,0,0,0,0,0,A,12,2,0974EA00,0,0,0,0,A,12,2,071D7F80,0,0,0,0,A,7,1,08FE2890,0,0,0,0,A
@@ -5053,7 +5193,7 @@ TaskForce=0A562AB0
 0AC1E030=1,17,0,6,0,0,0,0,G
 0AE176F0=1,4,1,0AE13080,0,0,0,0,A
 0AD69720=2,41,0,217,0,0,0,0,BC,99,0,85,0,0,0,0,BC
-0AD6FE80=5,80,1,08FDB380,0,0,0,0,BD,41,0,217,0,0,0,0,BD,38,0,4,0,0,0,0,A,38,0,5,0,0,0,0,A,17,0,55,0,0,0,0,BD
+0AD6FE80=5,80,1,08FDB380,0,0,0,0,BD,41,0,217,0,0,0,0,BD,38,0,14,0,0,0,0,A,38,0,15,0,0,0,0,A,17,0,55,0,0,0,0,BD
 0AD95F80=1,17,0,20,0,0,0,0,U
 0ADDA380=3,63,0,31,0,0,0,0,AF,63,0,31,0,0,0,0,AF,41,0,217,0,0,0,0,AF
 083F86C0=1,41,0,217,0,0,0,0,AG
@@ -5067,13 +5207,13 @@ TaskForce=0A562AB0
 0999E5B0=6,4,1,092A1320,0,0,0,0,A,4,1,092A2F50,0,0,0,0,A,4,1,092A2DC0,0,0,0,0,A,4,1,092A2CF0,0,0,0,0,A,4,1,09574B60,0,0,0,0,A,4,1,0958F720,0,0,0,0,A
 0A5EF770=3,17,0,30,0,0,0,0,AE,48,0,3,0,0,0,0,AE,56,0,9,0,0,0,0,A
 0A5ED940=0
-08D7FD00=3,4,1,0858C270,0,0,0,0,A,38,0,5,0,0,0,0,A,7,1,0A4F47D0,0,0,0,0,A
-080A14C0=3,38,0,0,0,0,0,0,A,74,0,5,0,0,0,0,A,3,0,5,0,0,0,0,A
+08D7FD00=3,4,1,0858C270,0,0,0,0,A,38,0,15,0,0,0,0,A,7,1,0A4F47D0,0,0,0,0,A
+080A14C0=3,38,0,0,0,0,0,0,A,74,0,15,0,0,0,0,A,3,0,15,0,0,0,0,A
 098F4F80=1,2,0,0,0,0,0,0,A
 098F49F0=1,1,0,0,0,0,0,0,A
-076722E0=1,3,0,5,0,0,0,0,A
+076722E0=1,3,0,15,0,0,0,0,A
 0A53D9D0=1,7,1,0A4F3330,0,0,0,0,A
-0AB31C00=4,9,0,4,0,0,0,0,A,9,0,1,0,0,0,0,A,9,0,6,0,0,0,0,A,6,0,1,0,0,0,0,A
+0AB31C00=4,9,0,14,0,0,0,0,A,9,0,1,0,0,0,0,A,9,0,16,0,0,0,0,A,6,0,1,0,0,0,0,A
 0A5FF860=1,21,0,137,0,0,0,0,A
 0A5FF300=3,21,0,138,0,0,0,0,A,27,0,600,0,0,0,0,A,23,0,0,0,0,0,0,A
 0ABAD7E0=2,55,0,1,0,0,0,0,AA,21,0,109,0,0,0,0,A
@@ -5087,7 +5227,7 @@ TaskForce=0A562AB0
 09A0AF80=1,21,0,286,0,0,0,0,A
 0A4C9740=1,21,0,288,0,0,0,0,A
 0A79C560=1,21,0,289,0,0,0,0,A
-0A23DD10=2,74,0,5,0,0,0,0,A,38,0,0,0,0,0,0,A
+0A23DD10=2,74,0,15,0,0,0,0,A,38,0,0,0,0,0,0,A
 0A17D310=2,5,1,082FC5D0,0,0,0,0,A,54,2,0A793BA0,0,0,0,0,A
 
 [Tags]

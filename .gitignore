@@ -11,27 +11,37 @@ cache
 
 skirmish.bat
 
-Maps/Custom/*.zip
-Maps/Custom/*.map
-Maps/Custom/*.png
+/INI/battle.ini
+/INI/battle2.ini
+/INI/art.ini
+/INI/rules.ini
 
-Map Editor/aqrit.cfg
-Map Editor/FinalSun.ini
-Map Editor/finalsunlog.txt
-Map Editor/*.log
+/Maps/Custom/*.zip
+/Maps/Custom/*.map
+/Maps/Custom/*.png
 
+/Map Editor/aqrit.cfg
+/Map Editor/FinalSun.ini
+/Map Editor/finalsunlog.txt
+/Map Editor/*.log
+/Map Editor/Map Renderer/gui_settings.xml
 
-Client/
-QM/
+/Screenshots/*.PCX
+/Screenshots/*.PNG
+
+/Client/
+/Debug/
+/QM/
 
 client.log
 
-Saved Games/*.SAV
+/Saved Games/*.SAV
 SAVEGAME.NET
 
 ddraw.dll
 ddraw.ini
 
+KEYBOARD.INI
 sun.ini
 
 spawn.ini
@@ -41,6 +51,7 @@ stats.dmp
 statistics.dat
 ts.log
 except.txt
+HALLFAME.DAT
 mpstats.log
 sync*.txt
 mpstats.txt
@@ -48,14 +59,6 @@ mpstats.txt
 _gsdata_
 buffer
 
-SCORES.MIX
-SCORES01.MIX
-Movies01.mix
-Movies02.mix
-Movies03.mix
-
 Language.dll
 
-INI/battle2.ini
-/INI/art.ini
-/INI/rules.ini
+*.MAP

@@ -9,6 +9,12 @@
 [CombatDamage]
 BridgeStrength=100
 
+[CYC2]
+Elite=CyCannonE
+Primary=CyCannon
+Secondary=CyFlamer
+DamageParticleSystems=SparkSys
+
 [DOGGIE]
 Nominal=yes
 
@@ -50,7 +56,7 @@ Visceroids=no
 [Basic]
 NextScenario=Maps\Missions\GDI2A.map
 AltNextScenario=Maps\Missions\GDI9C.MAP
-Name=NOD 7B: Escort the Bio-toxin Trucks
+Name=Escort the Bio-toxin Trucks
 NewINIFormat=4
 CarryOverCap=0
 EndOfGame=no
@@ -1820,7 +1826,7 @@ LocalSize=3,4,85,62
 
 [Infantry]
 0=Nod,CYC2,256,74,134,4,Guard,32,None,100,-1,0,1,1
-1=Special,E1,256,77,129,3,Guard,33,None,100,-1,0,1,1
+1=Special,E1NOD,256,77,129,3,Guard,33,None,100,-1,0,1,1
 2=GDI,E2,256,72,80,4,Guard,96,None,0,-1,0,1,1
 3=GDI,E2,256,73,80,4,Guard,32,None,0,-1,0,1,1
 4=GDI,E2,256,74,80,4,Guard,160,None,0,-1,0,1,1

@@ -36,10 +36,11 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 #### Generic
 
 - (+) **New Game Modes**: **Classic** and **Advanced**. Play Classic for a more familiar TS/FS experience, or see what the future holds in Advanced mode:
-	- CABAL as a playable faction
-	- Nod Flamedancers, an all-female caste of warriors armed with deadly flamethrowers
-	- Obelisk of Light can be upgraded with *Dark Prism* for anti-air capability
+	- New playable faction: Scion, a technophilic Nod cult vying for control within the Brotherhood. They utilise a mix of Nod and CABAL arsenal.
+	- Flamedancers, an all-female caste of Nod warriors armed with deadly flamethrowers
+	- Assassin, a stealthy Nod commando that can snipe infantry from afar, hijack vehicles, *and* demolish buildings with C4 charges
 	- Nod no longer uses cyborg units
+- (+) Revised multiplayer points system, now directly based on object cost
 - (±) Reordered techno lists based on tier, faction, and class. This affects the order objects appear in on the sidebar.
 - (+) Enabled the option for units to gain 20% increase in sight range by ranking up (`VeteranSight` changed from 0 to 1.2)
 - (+) Units repair 50% faster on Service Depots (`URepairRate` decreased from 0.016 to 0.008)
@@ -69,7 +70,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Spotlight travel speed decreased from 0.015 to 0.005
 	- (-) Spotlight acceleration rate decreased from 0.0025 to 0.0015
 - (-) Removed the Hunter-Seeker superweapon
-- (+) Fixed default threat evaluation values
+- (+) Revised all unit and building threat values
 - Fire:
 	- (+) Large fires now create adjacent, smaller fires
 	- (+) Damage spread increased from 8 to 12
@@ -78,14 +79,12 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Effectiveness against wood armor decreased from 148% to 100%
 	- (-) Effectiveness against prone infantry decreased from 600% to 150%
 - (-) Destroyable cliffs now have only 10% chance of collapsing when hit (`CollapseChance` decreased from 100% to 10%)
-- (±) Harvesters scan for Tiberium in a 25% smaller area, to mitigate the chance of AI harvesters from straying into nearby enemy bases (`TiberiumFarScan` decreased from 48 to 36)
 - (-) Removed armor and rate-of-fire bonuses/handicaps from easy and hard difficulty modes
 - (+) Fixed missing or incorrect `Owner` tags on certain deployed vehicles.
 - (+) New generic unit: *Mobile Expansion Vehicle* (MEV), a light support vehicle that can deploy into an immobile base expansion node
 - (-) Removed Mobile War Factories, made obsolete by MEVs
 - (+) Civilian vehicles no longer cost anything, to prevent players from farming veterancy points by killing them
-- (+) Aircraft reload 50% faster (`ReloadRate` decreased from 0.5 to 0.25)
-- (±) Helicopter-esque aircraft (i.e. ORCA Fighter, Harpy) no longer switch positions between shots unless necessary (disabled `CurleyShuffle`).
+- (+) Default aircraft reload rate doubled (`ReloadRate` decreased from 0.5 to 0.25)
 - (±) Aircraft flight level increased by ~67% (`FlightLevel` incr. from 600 to 1000). This is mostly a visual change, as aircraft and anti-air weapon ranges have been increased accordingly.
 	- (+) GDI SAM Launcher and Nod SAM Site target acquirement range increased from 10 to 15 cells. SAM missile range remains unchanged (15 cells).
 - (+) All aircraft and subterranean units can now move into shrouded areas
@@ -104,7 +103,8 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 - (+) Tiberium Viniferum (blue Tiberium) growth and spread rate increased by approximately 455% (`Growth`/`Spread` delay decreased from 10000 to 2200).
 - (+) Tiberium Viniferum growth and spread probability increased by 20% (from 5% to 6% per growth/spread check)
 - (+) Restored and improved an unused feature where Viniferum chain reaction ejects crystal shards that can grow into more Viniferum.
-- (+) Reworked the practically unused Tiberium Arboreum into large monoliths that can passively spread Viniferum. The monoliths can also explode violently into a shower of Viniferum shards. New Arboreum monoliths are sometimes created from Viniferum chain reactions.
+- (+) Reworked the practically unused Tiberium Arboreum into large monoliths that can passively spread Viniferum. The monoliths can also explode violently into a shower of Viniferum shards.
+- (+) Tiberium Trees and Tiberium Monoliths are now able to spread Tiberium over a small area, as opposed to just the immediate vicinity of the tree
 - Veinhole:
 	- (+) Veins now grow and spread ~33% faster (`VeinholeGrowthRate` decreased from 300 to 200)
 	- (+) Maximum vein area increased by 50% (`MaxVeinholeGrowth` increased from 2000 to 3000)
@@ -112,16 +112,18 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (+) Strength increased from 1000 to 2000
 - Tiberium gas clouds:
 	- (+) Effectiveness against concrete armor increased from 0% to 10%
-	- (±) Deals less damage but more frequently
+	- (±) Maximum duration increased from 1000 to 1200 frames
+	- (±) Deal less damage but more frequently
 	- (±) Affected by wind
-	- (-) Effectiveness against wood armor decreased from 150% to 100%
+	- (-) Effectiveness against wood armor decreased from 150% to 50%
+	- (-) Effectiveness against light armor decreased from 100% to 60%
 - (+) Fog of War grows faster (`FogRate` decr. from 0.5 to 0.12)
 - (-) All defense buildings now require power to operate
 - (+) Mitigated the issue where missiles and other homing projectiles explode prematurely when chasing target (`Arm` delay increased, in most cases from 2 to 64 frames)
 - (+) Slightly increased the accuracy of ballistic projectiles (disabled `Bouncy` but left `Elasticity=0`)
 - Construction Yard:
 	- (+) Strength increased from 1000 to 2000
-	- (+) Produces a small amount of power, to power a single Barracks, Hand of Nod or Biomech Facility (CABAL Barracks)
+	- (+) Produces a small amount of power (to power a single Barracks or Hand of Nod)
 	- (-) Armor changed from heavy to wood
 - (+) Barracks and Hand of Nod are now immediately available from a Construction Yard without requiring a Power Plant first
 - Tiberium Refinery:
@@ -174,12 +176,12 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (+) Deceleration rate decreased from 0.002 to 0.001 (lower means faster)
 	- (-) Acceleration rate decreased from 0.03 to 0.02 (lower means slower)
 - MCV:
+	- (+) Tech level requirement lowered from 10 to 9
 	- (-) Rate-of-turn decreased from 5 to 3
 	- (+) Gains increased strength and speed when veteran
 	- (+) Gains increased sight range and repairs itself when elite
 	- (-) Acceleration rate decreased from 0.03 to 0.01
 - Mobile Sensor Array:
-	- (±) Exclusive to GDI
 	- (+) Gains increased strength, speed (when mobile), and sight range when veteran
 	- (+) Repairs itself and reveals adjacent cloaked objects (in mobile mode) when elite
 	- Mobile:
@@ -188,17 +190,15 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- Deployed:
 		- (+) Sight range increased from 8 to 10 cells
 		- (+) Now has a chance to eject a survivor when destroyed
+		- (+) Alerts of any enemy unit within sensor range
 		- (-) Attracts lightning during ion storms
 - Limpet Drone:
-	- (±) Exclusive to Nod
-	- (+) Doubles as a low-range sensor when deployed
-	- (+) Cost decreased from 550 to 350
+	- (-) No longer available to GDI
+	- (+) Cost decreased from 550 to 300
 	- (+) Gains increased strength, speed (when mobile), and sight range when veteran
 	- (+) Repairs itself and reveals adjacent cloaked objects when elite
 	- (+) Cloaking speed increased 7-fold, from 7 to 1 (lower means faster)
 	- (±) Can be deployed by giving it an attack order
-	- (±) Changed category from AFV to Support
-	- (-) Tech level requirement increased from 3 to 6 (same tech level that Sensor Arrays require)
 	- (-) Range decreased from 2 to 1.98 cells so it can't shoot over walls
 - (+) Invisible light sources no longer occupy build space and cannot be EMP'd or destroyed
 - Zeroed out the probability of gaining obsolete powerups from goodie crates. They default to money bonus, thus the chance of getting money from a crate was much higher than indicated.
@@ -232,7 +232,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (±) Armor changed from heavy to wood
 	- (-) Attracts lightning during ion storms
 - Firestorm Wall:
-	- (+) Cost decreased from 250 to 200
+	- (+) Cost decreased from 250 to 150
 	- (-) Attracts lightning during ion storms
 - Drop Pod Node:
 	- (±) Renamed Drop-Pod Uplink
@@ -294,7 +294,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Walk speed decreased to pre-Firestorm levels, from 8 to 5
 - Ghost Stalker:
 	- (+) No longer crushable
-	- (+) Immunity to webs
+	- (+) Immune to webs
 	- (+) Gains increased strength and speed when veteran
 	- (+) Gains increased firepower, sight and weapon range, and scatters automatically when elite
 	- (-) Can no longer C4 deployed units like burrowed Tick Tanks
@@ -320,9 +320,13 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Now has a minimum range of 1.1 cells, to avoid an issue where the Titan shoots over adjacent targets in part due to the new projectile
 - Amphibious APC:
 	- (±) Renamed to Grizzly APC
+	- (+) Strength increased from 200 to 300
+	- (+) Passenger capacity increased from 5 to 8 passengers
 	- (+) Replaced GDI Barracks with any barracks as a building requirement
 	- (+) Gains increased strength and speed when veteran
 	- (+) Gains increased sight range and repairs itself when elite
+	- (-) Cost increased from 800 to 900
+	- (-) Speed decreased from 8 to 7
 - Hover MLRS:
 	- (±) Renamed to Kite MLRS
 	- (±) Missiles split to anti-ground rockets (unguided) and anti-air missiles
@@ -391,7 +395,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Can no longer be lifted by a Carryall
 	- (-) Attracts lightning when deployed during ion storms
 	- (-) Minimum range increased from 5 to 6 cells
-	- (-) Rate-of-fire decreased by ~17% (ROF incr. from 150 to 180)
+	- (-) Rate-of-fire decreased by ~67% (ROF incr. from 150 to 250)
 - Mammoth Mk. II:
 	- (+) Strength increased from 1200 to 2400
 	- (+) Gains increased strength and speed when veteran
@@ -410,8 +414,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (+) Sight range increased from 2 to 7
 	- (+) Gains increased strength and speed when veteran
 	- (+) Gains increased firepower, sight, and radar invisibility when elite
-	- (±) Now fires multiple missiles in strafing runs
-		- (-) Ammo decreased from 5 to 2 to compensate
+	- (+) Reload rate increased from 0.5 to 0.1
 	- (+) Max. missile speed increased from 30 to 40
 	- (+) Damage spread increased from 3 to 4
 - ORCA Bomber:
@@ -431,7 +434,9 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (+) Sight range increased from 2 to 6
 	- (+) Gains increased strength and speed when veteran
 	- (+) Gains increased sight range and radar invisibility when elite
+	- (+) Passenger capacity increased from 5 to 8 passengers
 	- (±) Changed category from `AirPower` to `AirLift`
+	- (-) Cost increased from 1200 to 1600
 	- (-) Rate-of-turn decreased from 5 to 3
 - Carryall:
 	- (+) Sight range increased from 2 to 6
@@ -492,6 +497,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Attracts lightning during ion storms
 - Pyramid of Nod:
 	- (±) Armor upgraded from heavy to concrete
+	- (±) Cost increased from 1000 to 3000 (affects veterancy)
 	- (-) No longer reveals adjacent cloaked objects
 - Vega's Pyramid:
 	- (+) Strength increased from 100 to 1500
@@ -561,6 +567,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Can only be trained from a Temple of Nod
 	- (-) Strength decreased from 300 to 150
 - Cyborg Commando:
+	- (+) Now correctly maps paths through obstacles that it can destroy
 	- (+) Gains increased strength and speed  when veteran
 	- (+) Gains increased firepower, rate-of-fire, weapon and sight range, heals itself, and scatters automatically when elite
 	- Proton torpedo replaced with a proton beam
@@ -598,16 +605,13 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Acceleration rate decreased from 0.03 to 0.02
 	- (-) No longer senses adjacent cloaked objects when elite
 	- (-) Nominal range decreased from 6.75 to 6 cells (used to be able to outrange a Titan due to arcing -- likely an oversight)
+	- (-) No longer uses the Mammoth Tank's twin cannon weapon when elite
 - Mobile Repair Vehicle:
-	- (+) Added a rotateable turret (graphics pending)
 	- (+) Gains increased strength, speed, and sight range and repairs itself when veteran
 	- (+) Repairs faster when elite
-	- (-) No longer uses the Mammoth Tank's twin cannon weapon when elite
 - Artillery:
-	- (+) Reverted skirmish/multiplayer limitations:
-		- (+) Damage increased from 115 to 150
-			- (-) Deform threshold increased from 120 to 150 to compensate
-		- (+) Rate-of-fire increased by ~36% (ROF decr. from 150 to 110)
+	- (+) Damage increased from 115 to 150
+		- (-) Deform threshold increased from 120 to 150 to compensate
 	- (+) Damage spread increased from 6 to 12
 	- (+) Effectiveness against none armor increased from 40% to 70% 
 	- (+) Maximum range increased from 18 to 22 cells
@@ -617,10 +621,12 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Cost increased from 975 to 1200
 	- (-) Acceleration rate decreased from 0.03 to 0.02
 	- (-) Attracts lightning during ion storms
+	- (-) Rate-of-fire decreased by ~17% (ROF incr. from 150 to 175)
 - Subterranean APC:
 	- (+) Renamed to Mole APC
 	- (+) Gains increased strength, speed, and sight range when veteran
 	- (+) Repairs itself when elite
+	- (-) Cost increased from 800 to 1000
 	- (-) Added any barracks as a building requirement
 - Devil's Tongue:
 	- (+) Gains increased strength, speed, and sight range when veteran
@@ -691,6 +697,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Acceleration rate decreased from 0.03 to 0.02
 - Harpy:
 	- (+) Infinite ammo
+	- (+) No longer switches positions between shots (disabled `CurleyShuffle`)
 	- (+) Damage increased from 60 to 76, split into two rounds
 	- (+) Automatically acquires new targets within guard range
 	- (+) Sight range increased from 2 to 7
@@ -727,13 +734,13 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (+) Damage spread increased from 0 to 15
 	- (+) Can destroy walls
 - Obelisk of Darkness:
+	- (+) Footprint decreased from 2 to 1 cell (also visually adjusted)
 	- (-) Rate-of-fire decreased by ~17% (ROF incr. from 20 to 24) so it has time to finish the charge animation
 	- (-) Can no longer eject human survivors by default
 - (+) New units:
 	- Manticore. A light recon drone armed with twin machine guns.
 	- Cyclone. A light recon drone armed with vertically launched anti-armor missiles.
 	- Charon. A high-tech, heavy hover tank armed with a piercing energy cannon.
-	- Cyborg Engineer (WIP)
 - Core Defender:
 	- (±) Replaced the laser weapon with plasma cannons, based on design similarities with the Cyborg Commando and leftover code
 		- (+) Now able to attack both air and ground units
@@ -757,6 +764,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	
 #### Neutral
 
+- (+) Fixed an oversight where some civilian billboards took up more physical space than visually indicated
 - (+) Civilian Array, Hospital, and Armory are now capturable tech buildings
 	- (+) Hospital and Armory provide build radius and can heal/upgrade infantry practically infinitely
 	- (+) Array provides radar and build radius
@@ -767,7 +775,6 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Gas Pump strength decreased from 400 to 250 in arctic theater
 	- (-) Gas Station Sign strength decreased from 400 to 100 in arctic theater
 - (±) D's Dog House renamed Port-a-Stack
-- (-) Egyptian pyramids are no longer indestructible, but still highly durable
 - (±) Crash 1–5 renamed Wreckages
 - Civilians:
 	- (+) `CIV4` and `CIV6` are now armed with pistols, to differentiate them from `CIV1` and `CIV3`, respectively.
@@ -875,6 +882,11 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 - Maximum amount of defensive teams (MaximumAIDefensiveTeams) increased from 6,5,4 to 12,10,8
 - Total team limits doubled (TotalAITeamCap increased from 14,12,10 to 28,24,20)
 - The AI will now wait slightly longer before disolving a team that has no members (DissolveUnfilledTeamDelay increased from 9000 to 10800), to account for the construction time of the most expensive unit (the Mammoth) in the worst low power scenario.
+- Re-evaluated Ion Cannon target priorities (values are for hard, medium and easy difficulty, respectively):
+	- Power values from 10,10,40 to 40,40,10
+	- Engineer values from 30,30,5 to 5,5,30
+	- Thief values from 20,20,5 to 5,5,20
+	- MCV values from 150,150,20 to 20,20,150
 - Some AI-controlled units that deal splash damage now avoid causing collateral damage to friendly units (Supress control on weapon types)
 - The AI now builds multiple factories.
 - The AI now builds an extra Tiberium refinery.
@@ -882,11 +894,12 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 - The AI now builds Mobile Sensor Vehicles, EMP Tanks, Limpet Drones, and Shroud Weavers.
 - The AI now builds and fires EMP Cannons. Due to engine limitations, these EMP Cannons have infinite range. To compensate, the EMP fades off quicker and has a much smaller area of effect than normal.
 - Hard and medium AI attack team unit compositions are now more varied.
+- Fixed an error where the GDI AI would check for dummy unloading Harvesters (`HORV`) before building Harvester attack teams
+- GDI task forces adjusted according to the Grizzly APC's increased passenger count
+- Added escorts to GDI Juggernaut task forces
 
 #### Terrain
 
-- Tiberium (Blossom) Trees now visibly spit out Tiberium seeds that can cover a small area, as opposed to just magically spawning Tiberium on the neighboring cells
-	- Note that currently, due to an engine bug, seeded Tiberium has little to no chance of growing or spreading by itself
 - Modified the speed penalties of different land types, expressed as percentage of full speed:
 	- Clear terrain:
 		- (+) Tracked vehicle speed increased from 70% to 90%
@@ -922,7 +935,8 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 - Large rough tiles now use the ice land type internally to allow more variation in terrain roughness
 - Tiberian Fona are no longer flammable (`Armor` changed from wood to light, which prevents the terrain objects from catching fire)
 - The grey terrain in the arctic theater can now be deformed by craters
-- Reverted an edit made to shore tiles that allowed units to move and buildings to be placed on previously impassable tiles.
+- Reverted an edit made to shore tiles that allowed units to move and buildings to be placed on previously impassable tiles
+- Ice no longer instantly cracks from any explosive; instead it now has a discrete strength value (200)
 
 
 ### Visuals
@@ -932,29 +946,38 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- Remade several unit graphics (credit: Demo): ORCA Transport, Artillery, Mole APC (Subterranean APC), Devil's Tongue,
 		- Based on Crimsonum's work: Grizzly APC (Amphibious APC), Kite (Hover MLRS), Disruptor, Raider (Buggy), Interceptor (Bike), Tick Tank, Stealth Tank, Harpy
 		- Based on Stingerr's work: ORCA Fighter, ORCA Bomber, Dropship
-		- Other remakes by various authors: Titan (credit: areaSZ), Mammoth Mk. II (credit: Lin Kuei Ominae), Hunter-Seeker (credit: Crimsonum)
+		- Other remakes by various authors: Titan (original by areaSZ, edited by Crimsonum), Mammoth Mk. II (credit: Lin Kuei Ominae), Hunter-Seeker (credit: Crimsonum)
 	- GDI and Nod now have separate variants of Light Infantry and Engineers
 	- Remade the "electrocution" infantry death animation (credit: Demo)
 	- Replaced the default infantry explosion animation with an organic, "gibbed" death animation
 	- Large explosions may now shake the screen
+	- Replaced the TD/RA1 leftover machine gun firing animations with ones better fitting the TS scale
 	- Machine guns and cannons now eject spent casings when firing
 	- Cannon shells, bombs, rockets, and missiles now use 3D voxel imagery where possible
 	- Cannons, rocket launchers, etc. now create a puff of smoke from the muzzle when firing
 	- Lasers now produce a visible impact animation
 	- RPGs now leave a smoke trail
-	- Power plants and Nod War Factory now produce visible smoke from their smoke stacks
+	- New animation for Reaper webs
+	- Power plants, Tiberium Refinery, and Nod War Factory now produce visible smoke from their smoke stacks
+	- GDI Power Plant turbine upgrade now has a buildup animation
 	- The Chemical Facility may now emit green smoke when damaged
 	- Destroyed buildings may now leave smoking craters behind
 	- Restored unused debris types and added new ones; vehicles now eject more varied debris (turrets, rocket pods, etc.) when destroyed
 	- All units and buildings now display their names when hovered over
-	- Limpet Drones may now emit sparks and smoke when damaged
 	- Tiberian Fiend now visually hurls multiple shards at once
 	- Superweapons show timers
 	- Restored the unused damaged version of the Laser Fence Post idle animation
-	- Laser Turret now has an idle animation to convey its power state
-	- SAM Site now has a unique turret animation
+	- Nod Laser Turret now has an idle animation to convey its power state
+	- Updated Nod SAM Site graphics, modeled after its cutscene counterpart
+	- GDI Communications Center and Nod Radar Facility now have additional animations
 	- Lasers and railguns now produce a visible blast on impact
+	- Changed the default mouse cursor to resemble the beta cursor
+	- Tweaked the building placement cursor
+	- Tweaked the selected unit indicator
+	- Updated skirmish/multiplayer score screen background to reflect both main factions
 - Fixes:
+	- Fixed missing animations and shadows on the GDI Firestorm Generator
+	- CABAL Core Obelisk no longer flashes when beginning to charge
 	- Fixed the Obelisk of Light firing offset
 	- Mitigated the issue where the first frame of the Obelisk charging animation flashes whenever it plays
 	- Fixed an oversight where objects behind the large Kodiak were visible through its windows
@@ -972,8 +995,17 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- Fixed an issue where various infantry had either incorrect or missing firing coordinates
 	- Fixed an issue where civilians "blink" when firing while in panicked mode
 	- Fixed some odd colors in infantry corpse animations
+	- Restored missing water cliff and tunnel shadows
 - Improvements:
-	- Revised smoke animations based on best practises
+	- Added remap to Tech Array (credit: Bittah Commander) and Tech Armory
+	- Recolored the MCV and Mobile Sensor Vehicle to fit all factions
+	- Removed the unrealistic "socket" visual theme from building upgrade slots
+	- Remade the Hand of Nod sidebar icon with lower brightness, to better match the in-game building
+	- Removed terrain pixels from veinhole and vein graphics due to said pixels not interacting with map lighting and producing visual issues
+	- Limpet Drone no longer sinks to the ground when deployed, instead the top remains on the surface like in concept art
+	- Limpet Drones may now emit sparks and smoke when damaged
+	- Replaced the TD/RA1 leftover burn animations with the TS fire anims
+	- Revised smoke animations
 	- All large debris animation types now emit smoke (used to apply to just one)
 	- Improved the beacon animation with a non-dithered shadow and a glow-in-the-dark light
 	- Civilian array's spinning dish animations now play slower when damaged
@@ -993,22 +1025,25 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- Upscaled the EMP blast animation to match the size of the area of effect
 	- Units no longer glow by default (disabled `ExtraUnitLight`, `ExtraInfantryLight`, and `ExtraAircraftLight`)
 	- Removed targeting laser from Titan, Kite, and Mammoth Tank
-	- Tweaked the sprites of some infantry and vehicle units
+	- Tweaked the sprites of multiple infantry and vehicle units
 	- Most base building animations now shut down in low power conditions
 	- GDI Weapons Factory and Nod War Factory frontal lights now animate only during vehicle exit
 	- Removed lamp posts that were baked into a few city buildings
+	- Some color-emitting light posts now have accordingly colored lamps
 	- Flames caused by fire, explosions etc. fade out more smoothly
 	- Other minor adjustments
 
 
 ### Audio
 
+- Added an optional beta GDI EVA voice set, enable from the client settings
 - All bonus crates are now accompanied by a relevant sound effect
-- Added several new high quality sound effects (credit: Henskelion)
+- Added new ambient sound effects
+- Added several new high quality weapon/explosion sound effects (credit: Henskelion)
 - Added more variety to civilian voice responses
 - Vehicle deployment no longer produces the same "slam" sound (BuildingDrop) that placing down a building does.
-- Restored the cut parachute deploy sound (ChuteSound)
-- Nod Mobile Repair Vehicle no longer uses human voice responses (it's a robotic vehicle)
+- Restored the cut parachute deploy sound (`ChuteSound`)
+- Nod Mobile Repair Vehicle now uses appropriate robotic voice responses
 - Restored some unused unit voice responses
 - Multi-cell buildings no longer create multiple overlapping explosion sounds when destroyed
 - Restored unused building explosion sounds
@@ -1017,7 +1052,6 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 - The Wolverine now uses more accurate and unique set of voice responses (e.g. "unit ready" instead of "infantry reporting")
 - Restored two cut music tracks, Initiate and Stomp.
 - Fixed an issue where Nod-specific music tracks were unavailable in skirmish/multiplayer
-- Changed some weapon/explosion sound effects
 - Restored cut infantry death cries
 
 
@@ -1025,30 +1059,32 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 
 - Global changes:
 	- Improved ambiance (more varied lighting, ambient sounds, etc.)
+	- Smooth fade-in and short briefing at mission start
 	- Restored missing audio and text lines, such as mission objective reminders
 	- Increased difficulty for medium and hard difficulty modes
 	- Changed the color of Hassan's forces to a lighter blue for improved visuals and to distinguish them from CABAL and other established factions
-	- The Cyborg Commando is now first armed with a conventional machine gun and a flamethrower before later upgrading to the proton cannon
-	- CABAL no longer uses GDI and Nod units and buildings in code, allowing the original buildings and units the chance to eject survivors (not yet fully implemented)
+	- The Cyborg Commando is now first armed with a conventional machine gun and a flamethrower before later upgrading to a proton cannon
+- Tutorial Mission 2:
+	- Added description about blue Tiberium
 - GDI Mission 1: Reinforce Phoenix Base
 	- Restored dropship loadout for configuring dropship reinforcements
 	- Extended and tweaked the intro scene to better match with the post-mission cutscene
 	- Slightly tweaked map layout
 - GDI Mission 2: Secure The Region
 	- Extended and tweaked the intro scene
-	- Tweaked the map layout to allow new strategic options
+	- Tweaked the map layout to allow more strategic options
 - GDI Mission 3A: Secure The Crash Site
 	- Added dropship loadout
-	- Added a bonus objective (only available by completing 3B)
 	- Fixed an oversight that messed up one of the Nod cargo truck scripts when a bridge was repaired
 	- The Nod base will now receive periodic reinforcements by train
 	- Tweaked the intro scene
 	- Tweaked the map layout
+	- If mission 3B is completed, the player receives additional reinforcements
 - GDI Mission 3B: Destroy The Supply Base
 	- Added an intro scene
 	- The Nod AI will now respond accordingly depending on if/when they detect GDI
 	- Moved one of the Civilian Arrays so that capturing them rewards the player for progressing through the mission
-	- Moved the demo truck event to another location and increased its tactical importance.
+	- Moved the demo truck event to another location and increased its tactical importance
 	- Other misc. fixes and tweaks
 - GDI Mission 4: Defend The Crash Site
 	- Added dropship loadout
@@ -1064,6 +1100,8 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 - GDI Mission 12: Final Conflict
 	- Fixed an oversight that caused one of the Nod units to attack the civilian city prematurely
 	- Slightly tweaked the map layout
+- Firestorm GDI Mission 4: In the Box
+	- Split the Nod base into Nod and CABAL owned sections
 - Firestorm GDI Mission 9: Core of the Problem
 	- Civilians are now allied to GDI
 	- The player can no longer build a Drop-Pod node to call in Drop-Pod reinforcements (after all, the comm. link to Philadelphia is severed)
@@ -1076,11 +1114,12 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- Other minor adjustments
 - Nod Mission 2: Retaliation
 	- Restored unused voice & text lines
-	- Added new tactical options
+	- Increased the main Elite Guard base defenses
+	- Minor changes to map layout for more tactical options
 	- Other minor fixes & adjustments
 - Nod Mission 3A: The Would-Be Pharaoh
 	- Restored cut and unused content
-	- Renamed the mission title
+	- Renamed the mission title to be more unique
 - Nod Mission 3B: Seeds of Rebellion
 	- New scripted events and AI responses
 	- Changed the map layout to encourage strategic choices
@@ -1092,26 +1131,93 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- Made the enemy AI more aggressive against intruders
 	- GDI AI now reconstructs some buildings if destroyed
 	- Tweaked the map layout a little
-	- Other minor adjustments 
+	- Other minor adjustments
 
 
 ### Multiplayer
 
+- New 2-player map: Highland Hollow
+- Added several new team color options and revised the existing ones
 - Added an option to specify time of day
 - Added an option to specify wind direction
-- When multiple AI players are present and one of them is defeated, the remaining AIs no longer instantly ally against the human player(s) (Paranoid disabled)
-- New 2-player map: Highland Hollow
-- Grassy Knoll:
-	- Better ambience
-	- Added Tiberium monoliths to large Viniferum fields
-	- Added city lights that only turn on during the night (if dynamic lighting is selected)
-	- Other minor tweaks
+- When multiple AI players are present and one of them is defeated, the remaining AIs no longer instantly ally against the human player(s) (`Paranoid` disabled)
 - Casey's Canyon:
-	- Better ambience
+	- Improved ambiance
 	- Added Tiberium monoliths to large Viniferum fields 
+	- Added a Tiberium tree on the bottom left player's Riparium field, allowing the field to regenerate
 	- Added another Tech. Array to the opposite side of the map
 	- The train can now be boarded. It unloads automatically at the next stop
 	- Other minor tweaks
+- Dueling Island:
+	- Improved ambiance
+	- Connected the small Viniferum islands to the main island via land routes
+	- Added a few Aboreum formations to Viniferum fields
+	- Replaced Viniferum monoliths with Aboreum monoliths
+	- All Tiberium fields with Tiberium trees or monoliths now regenerate
+- Grand Canyon:
+	- Improved ambiance
+	- The central Viniferum field now regenerates
+	- Balanced the distribution of regenerating Riparium fields
+- Grassy Knoll:
+	- Improved ambiance
+	- Added Tiberium monoliths to large Viniferum fields
+	- Added city lights that only turn on during the night (if dynamic lighting is selected)
+	- Other minor tweaks
+- Hot Springs:
+	- Improved lighting
+	- Added Aboreum formations to most Viniferum fields
+	- Added steam coming from the hot springs
+- The Ice Must Floe:
+	- Improved lighting
+	- Added Tiberium monoliths to Viniferum fields
+	- The central Viniferum fields now regenerate
+	- Balanced the distribution of regenerating Riparium fields
+- Limited Access:
+	- Fixed an oversight where one of the civilian buildings was misplaced on a highway
+- Night of the Mutants:
+	- Replaced some of the Viniferum with Aboreum along the river and in a few other places
+	- The Viniferum field at bottom middle now regenerates
+- Permafrost:
+	- Improved lighting
+	- Connected the central ridges with bridges
+	- Replaced some of the Viniferum with Aboreum along the ridges
+- The Pit:
+	- Infantry may now transform into Visceroids when killed by Tiberium and Tiberium-based weapons
+- Pit or Plateau:
+	- Moved the player starting positions a bit
+- Sinkholes:
+	- Separated the veinholes with strands of Viniferum (if multiple veinholes are connected, sometimes killing one is enough to make all the veins wilter and disappear)
+- Storms:
+	- Removed the two neutral vulcan towers guarding a collapsed tunnel
+	- Slightly tweaked the east city
+- Stormy Valley:
+	- Fixed a couple of holes on the terrain
+	- Improved lighting
+	- Disabled the storm trigger (ion storms are now a client option)
+- Terraces:
+	- Improved ambiance
+	- Added some roaming wildlife
+- Theme Park:
+	- Fixed an oversight(?) where the AI could not build any teams
+- They All Float:
+	- Fixed a few broken tunnel sections
+	- Improved ambiance
+	- Added a few Aboreum formations to Viniferum fields
+	- Replaced a few of the Viniferum monoliths with Aboreum monoliths
+	- All Tiberium fields with Tiberium trees or monoliths now regenerate
+- Tiberium Garden Redux:
+	- Renamed Tiberium Garden
+	- Switched the position of Riparium and Viniferum fields in the top and left player areas to match the others
+	- Added flank routes to player areas
+	- Viniferum fields now regenerate in the middle
+	- Improved ambiance
+- Tiers of Sorrow:
+	- Renamed Tiers of Regret
+	- Redesigned the middle area, and redistributed the Veinhole Monsters
+	- Added Aboreum formations to Viniferum fields
+	- Improved ambiance
+- Tread Lightly:
+	- It's now possible to traverse from one end of the map to another (1st to 5th player) along the ice and shores
 
 
 ### Map Editor
@@ -1127,6 +1233,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- MapTool
 	- Tunnel Drawer
 - Added all map tools into the editor's tools menu
+- Fixed an issue where the Nod Radar Facility appeared in wrong palette
 - Invisible Light Posts are now called Light Sources and have custom (in-editor only) graphics to help differentiate them from visible Light Posts
 - `INORNGLAMP` is now a negative orange light source, to differentiate it from the other orange light source `INORANLAMP`
 - Replaced Tiberium Tree terrain types with building types for improved functionality
@@ -1142,7 +1249,12 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 
 ### Client
 
-- Updated with new updater, better cross-platform support, and new player status icons
+- Updated to latest version (2.8.0.0 / c1efde7). New features include:
+	- New updater
+	- Better cross-platform support
+	- Map favorites
+	- New player status icons
+	and more
 - New game options for skirmish and/or multiplayer: 
 	- Sandbox: allows near-instant construction of units and buildings.
 	- Ion Storms: summons periodic Ion Storms.
@@ -1161,14 +1273,16 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 
 ### Misc.
 
+- Firestorm EVA and CABAL voicelines moved to the base game speech\*.mix files
+- Re-implemented the large Kodiak as three separate buildings to cover the entire Kodiak frame (due to limited building footprint options)
+- Optimized handling of the civilian dam, Kodiak, and Kodiak crash animation graphics (enabled `DemandLoad` and moved the assets to isotem.mix)
 - Added unbuildable, pre-upgraded Component Towers for future use
-- Removed the large Kodiak building (`KODIAK`) and used its graphics on the original Kodiak (`GAKODK`)
 - Several items have been dehardcoded
 - Removed obsolete Red Alert leftovers from the terrain and smugde type lists
 - Cleaned up the animations list, fixing indices and removing duplicates
 - Restored the missing JEEP vehicle type for future use
 - Integrated with [Vinifera](https://github.com/Vinifera-Developers/Vinifera), an open-source engine extension for Tiberian Sun
-- Updated game executable with latest TS patches (build 732ee9f, date 2022-11-01)
+- Updated game executable with latest TS patches (build 8ec8a1d, date 2023-03-09)
 - Restored and updated mission.ini and mission1.ini for future use
 - Updated CnC-DDraw to version 5.0.0.0
 - Migrated Firestorm changes/additions to Tiberian Sun (unless reverted/replaced)
@@ -1187,6 +1301,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 - **Deceleration rate** means how fast the object will slow down. Note that higher values result in *slower* deceleration rate. Also note that different object types may use different deceleration units.
 - **Lepton** is the smallest distance unit in the game. A lepton is 1/256th of a cell edge's length.
 - **Range** is measured in cells.
+- **Remap** means a kind of color or pixels that are remapped to the player's color.
 - **ROF**, despite standing for rate-of-fire, is actually the cooldown of the weapon. Hence a lower ROF value means higher rate-of-fire.
 - **Scatter** is the ability for the unit to scatter automatically from enemy fire and to avoid getting crushed by heavy vehicles. Some units gain this ability when reaching veteran or elite rank.
 - **Slowdown distance** is the distance to the destination at which point the unit will begin to decelerate. It is measured in leptons.
