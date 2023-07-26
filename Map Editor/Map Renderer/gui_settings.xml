@@ -7,18 +7,18 @@
       <setting name="enginera2" serializeAs="String">False</setting>
       <setting name="enginets" serializeAs="String">False</setting>
       <setting name="enginefs" serializeAs="String">True</setting>
-      <setting name="windowlocation" serializeAs="String">2329, 711</setting>
-      <setting name="outputjpg" serializeAs="String">False</setting>
-      <setting name="outputjpgq" serializeAs="String">95</setting>
+      <setting name="windowlocation" serializeAs="String">800, 600</setting>
+      <setting name="outputjpg" serializeAs="String">True</setting>
+      <setting name="outputjpgq" serializeAs="String">90</setting>
       <setting name="outputpng" serializeAs="String">False</setting>
       <setting name="outputpngq" serializeAs="String">9</setting>
-      <setting name="outputthumb" serializeAs="String">True</setting>
+      <setting name="outputthumb" serializeAs="String">False</setting>
       <setting name="thumbpreserveaspect" serializeAs="String">True</setting>
       <setting name="thumbdimensions" serializeAs="String">800,500</setting>
       <setting name="thumbpng" serializeAs="String">True</setting>
       <setting name="modconfig" serializeAs="String">True</setting>
-      <setting name="modconfigfile" serializeAs="String">D:\Users\Jani\Google Drive\Rubicon\Map Editor\Map Renderer\modconfig.xml</setting>
-      <setting name="input" serializeAs="String">D:\Users\Jani\Google Drive\Rubicon\Maps\Multiplayer\g_canyon.map</setting>
+      <setting name="modconfigfile" serializeAs="String">.\modconfig.xml</setting>
+      <setting name="input" serializeAs="String"></setting>
       <setting name="mixdir" serializeAs="String"></setting>
       <setting name="output" serializeAs="String"></setting>
       <setting name="outputauto" serializeAs="String">False</setting>
@@ -47,12 +47,7 @@
       <setting name="hwvoxels" serializeAs="String">True</setting>
       <setting name="swvoxels" serializeAs="String">False</setting>
       <setting name="renderprog" serializeAs="String"></setting>
-      <setting name="batchinput" serializeAs="String">C:\Users\jani_\Google Drive\Rubicon\Maps\Multiplayer\caseycan.map
-C:\Users\jani_\Google Drive\Rubicon\Maps\Multiplayer\hollow.map
-C:\Users\jani_\Google Drive\Rubicon\Maps\Multiplayer\duel.map
-C:\Users\jani_\Google Drive\Rubicon\Maps\Multiplayer\tiers.map
-C:\Users\jani_\Google Drive\Rubicon\Maps\Multiplayer\float.map
-C:\Users\jani_\Google Drive\Rubicon\Maps\Multiplayer\springs.map</setting>
+      <setting name="batchinput" serializeAs="String"></setting>
     </CNCMaps.GUI.Properties.Settings>
   </userSettings>
 </configuration>

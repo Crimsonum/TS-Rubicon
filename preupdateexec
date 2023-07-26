@@ -7,6 +7,7 @@ INI\day.ini=INI\Game Options\Time Day.ini
 INI\dusk.ini=INI\Game Options\Time Dusk.ini
 INI\morning.ini=INI\Game Options\Time Morning.ini
 INI\night.ini=INI\Game Options\Time Night.ini
+Resources\SecondStageUpdater.dll=Resources\Updater\SecondStageUpdater.dll
 
 [Delete]
 ;FILE_PATH

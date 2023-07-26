@@ -6,11 +6,16 @@
 [Delete]
 changelog.txt
 INI\battlefs.ini
+INI\ion.ini
+INI\MPMaps.pkt
+INI\theme01.ini
+INI\Game Options\Harder AI.ini
 Map Editor\Info.txt
 Map Editor\readme marble.doc
 Map Editor\readme.txt
 Map Editor\FSExt.dll
 Map Editor\FSExt.dll.inj
+Map Editor\Scripts\- MP Enable Change Owner Function.fscript
 Map Renderer\CNCMaps.exe
 Map Renderer\CNCMaps.Renderer.GUI.dat
 Map Renderer\Roslyn.Compilers.dll
@@ -42,13 +47,13 @@ Resources\TS Theme\updatequerybg.png
 Resources\TS Theme\updaterbg.png
 Resources\TS Theme\slocindicatorr.png
 Resources\TS Theme\slocindicatorx.png
-Map Editor\Scripts\- MP Enable Change Owner Function.fscript
-INI\ion.ini
-INI\MPMaps.pkt
-INI\theme01.ini
-INI\Game Options\Harder AI.ini
 Resources\TS Theme\sortAlphaActive.png
 Resources\TS Theme\sortAlphaInactive.png
+Resources\TS Theme\MainMenu\Logo-CN.png
+Resources\TS Theme\MainMenu\Logo-DE.png
+Resources\TS Theme\MainMenu\Logo-FR.png
+Resources\TS Theme\MainMenu\mainmenubg.png
+Resources\TS Theme\MainMenu\mainmenuebg.png
 
 [RenameFolder]
 ;OLD_FOLDER_PATH=NEW_FOLDER_PATH

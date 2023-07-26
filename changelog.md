@@ -4,25 +4,71 @@ All changes and assets were made by Crimsonum unless stated otherwise. Tools and
 
 For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/changelog.txt).
 
-## Table of Contents
-1. Developer Version 0.1.1
-2. Developer Version 0.1.0
-	1. Gameplay
-		1. Generic
-		2. GDI
-		3. Nod
-		4. CABAL
-		5. Neutral
-		6. AI
-		7. Terrain
-	2. Visuals
-	3. Audio
-	4. Campaign
-	5. Multiplayer
-	6. Map Editor
-	7. Client
-	8. Miscellaneous
-3. Definitions (A Guide For Newbies)
+
+## Developer Version 0.2.0:
+
+- Campaign
+	- GDI Mission 2:
+		- Added reinforcements to easy & medium difficulties
+		- Added an enemy reinforcement to hard difficulty
+		- New types of AI attacks
+	- GDI Mission 3 A:
+		- Reworked part of the map layout
+		- Added a new Nod attacks
+		- Added more variability to Nod reinforcements
+		- Restored a previously cut mechanic where, if the player has completed mission 3 B, they can decide which infantry to load into the captured train
+	- GDI Mission 3 B:
+		- Reworked the mission and the map layout to utilize a two-pronged approach, with the player controlling two geographically separate teams
+		- Nod patrols are more intelligent and seek help when attacked
+		- Replaced the capturable comm. arrays with destructible Nod SAM Sites (the explanation and scripting behind the arrays and GDI reinforcements were too convoluted)
+		- Moved certain spotlight towers to more tactical positions and/or away from places where the spotlight could not track enemies due to technical limitations
+		- Added victory and loss cutscenes
+		- Added fog
+	- Nod Mission 1:
+		- Fixed an oversight in a couple of scripts
+	- Added the animated GDI victory cutscenes to GDI movies mix, enabling their use in the GDI campaign
+	- In early missions, Ghost Stalker now uses a set of conventional weapons (a machine gun and a grenade launcher) instead of a railgun
+
+- Multiplayer
+	- Two new maps:
+		- [2] Impasse (by Tiberius & Crimsonum)
+		- [5] Claustrophobia (by Crimsonum)
+	- Updated [2] Dueling Island:
+		- Extended the map a bit to the west, to open up the northwest passage more
+		- Added ambient sounds
+		- Fixed the lighthouse not producing light
+	- Custom maps now have the option of infantry transforming into Visceroids turned on by default
+
+- Gameplay
+	- GDI Component Tower
+		- Now armed with a light machine gun by default. This weapon is replaced by whatever upgrade is placed on the tower (pending graphics for the closed firing ports)
+		- Cost increased from 300 to 400
+		- Power consumption increased from 10 to 15 units
+		- Reduced the threat posed by the tower from 33 to 20
+		- RPG Launcher upgrade now visually fires rockets instead of tumbling canisters
+	- Gates now close 50% faster (delay decreased from .2 to .13)
+	- Fixed an oversight where the post-Firestorm GDI Commando was unintentionally available for training
+	- Fixed an oversight where Drop-Pods had a chance of spawning Viniferum crystals on impact
+
+- AI
+	- The AI will now capture tech structures
+	- Fixed certain global AI scripts targeting wrong structures
+
+- Visuals
+	- Added new graphics for low bridges (temperate only for now)
+	- Added a WIP production anim for the GDI Dropship Bay
+	- Fixed incorrect HVA bounds on the Nod Raider Buggy
+	- Fixed Civilian Array hitbox height
+	- Disabled the window "animation" on the GDI Comm. Center as it overlapped with upgrades
+
+- Client
+	- In the full mission menu, divided the campaigns into acts
+	- Adjusted extra player options panel size & position
+	- Updated second-stage updater to version 1.0.15
+	- Updated cheater screen
+
+- Other
+	- Fixed an oversight where the low bridge gap overlay were invisible in the map editor
 
 
 ## Developer Version 0.1.3:
@@ -48,6 +94,24 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 
 
 ## Developer Version 0.1.0:
+
+## Table of Contents
+1. Gameplay
+	1. Generic
+	2. GDI
+	3. Nod
+	4. CABAL
+	5. Neutral
+	6. AI
+	7. Terrain
+2. Visuals
+3. Audio
+4. Campaign
+5. Multiplayer
+6. Map Editor
+7. Client
+8. Miscellaneous
+9. Definitions (A Guide For Newbies)
 
 ### Gameplay
 
