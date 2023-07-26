@@ -10,6 +10,7 @@
 | Contributor | Starkku, E1 Elite | [MapTool](https://github.com/Starkku/MapTool) |
 | Contributor | Q45 | Tunnel Drawer |
 | Contributor | crosire & co. | ReShade |
+| Contributor | 4SG | TS "valve" graphics |
 | Contributor | areaSZ | Titan graphics |
 | Contributor | Bittah Commander | Tech Array graphics |
 | Contributor | Henskelion | Several high-quality sound effects |

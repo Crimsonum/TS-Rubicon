@@ -5,7 +5,8 @@ All changes and assets were made by Crimsonum unless stated otherwise. Tools and
 For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/changelog.txt).
 
 ## Table of Contents
-1. Developer Version 0.1
+1. Developer Version 0.1.1
+2. Developer Version 0.1.0
 	1. Gameplay
 		1. Generic
 		2. GDI
@@ -21,10 +22,32 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	6. Map Editor
 	7. Client
 	8. Miscellaneous
-2. Definitions (A Guide For Newbies)
+3. Definitions (A Guide For Newbies)
 
 
-## Developer Version 0.1:
+## Developer Version 0.1.3:
+
+- Updated second-stage updater
+
+
+## Developer Version 0.1.2:
+
+- Test build
+
+
+## Developer Version 0.1.1:
+
+- Disabled a test trigger in Nod mission 03 A ("The Would-Be Pharaoh")
+- The changelog and credits links in the client now point to the respective files in the update server
+- Fixed accidental unlit colors on the GDI Component Tower
+- Fixed an issue in the multiplayer lobby where the Fog of War option was not replaced with Shroud Regrows (FoW is unstable in network games)
+- Disabled the Quick Match button in the main menu, for now
+- Fixed an issue where the Map Editor did not save newly created multiplayer maps to the right Custom Map category
+- Implemented additional player options to skirmish and multiplayer
+- Updated the client's second-stage updater
+
+
+## Developer Version 0.1.0:
 
 ### Gameplay
 
@@ -1260,6 +1283,8 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- Ion Storms: summons periodic Ion Storms.
 	- Fog of War (skirmish only): adds another, translucent layer of shroud that regrows over time. It hides units but not buildings or terrain.
 	- Shroud Regrows (multiplayer only): the shroud slowly regenerates.
+- New main menu background (credit: 4SG and Crimsonum)
+- New main menu button sound (credit: Henskelion)
 - Added an option to select any mission from the campaign menu.
 - Multiplayer maps added in the Firestorm expansion are no longer separated in the maps list
 - Default game speed decreased from 60 FPS to 30 FPS in skirmish and 45 FPS in LAN/CnCNet.
