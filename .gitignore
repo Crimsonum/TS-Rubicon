@@ -26,6 +26,8 @@ skirmish.bat
 /Map Editor/*.log
 /Map Editor/Map Renderer/gui_settings.xml
 
+/MIX/speech01.mix
+
 /Screenshots/*.PCX
 /Screenshots/*.PNG
 
@@ -62,3 +64,12 @@ buffer
 Language.dll
 
 *.MAP
+*_original.exe
+
+version_backup
+ReShade.ini
+ReShade.log
+ReShade_GAME.log
+d3d9.dll
+dxgi.dll
+opengl32.dll

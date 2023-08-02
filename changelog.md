@@ -5,6 +5,33 @@ All changes and assets were made by Crimsonum unless stated otherwise. Tools and
 For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/changelog.txt).
 
 
+## Developer Version 0.2.1:
+
+- GDI mission 3 B:
+	- Fixed an issue that prevented the AI from creating a vehicle patrol team
+	- Removed initial credits from the player, a leftover from an earlier/alternative version of this mission
+- Nod Mission 3 B:
+	- Renamed to "Breakout"
+	- Redesigned a large portion of the map
+	- New scripted elements and AI attacks
+- ORCA Fighter:
+	- Ammo decreased from 5 to 4 to match the cinematic model
+	- Damage increased from 30 to 40
+	- Reload delay increased from 0.1 to 0.133
+- ORCA Bomber reload delay decreased from 0.5 to 0.375
+- Harpy:
+	- Strength increased from 180 to 200
+	- Damage decreased from 38 to 30
+	- ROF decreased from 36 to 32
+- Banshee reload delay decreased from 0.25 to 0.16
+- Fixed missing map previews for the [2] Impasse and [5] Claustrophobia multiplayer maps
+- Updated client to latest development version (from July 28th, 2023)
+- Update client launcher (`Rubicon.exe`) to version `2.0.6`
+- Updated Vinifera to latest nightly build (`ba8f3c7`)
+- Updated game and client executable icons
+- Removed a test EVA audio file that may have caused problems
+
+
 ## Developer Version 0.2.0:
 
 - Campaign
@@ -171,7 +198,6 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 - (+) New generic unit: *Mobile Expansion Vehicle* (MEV), a light support vehicle that can deploy into an immobile base expansion node
 - (-) Removed Mobile War Factories, made obsolete by MEVs
 - (+) Civilian vehicles no longer cost anything, to prevent players from farming veterancy points by killing them
-- (+) Default aircraft reload rate doubled (`ReloadRate` decreased from 0.5 to 0.25)
 - (±) Aircraft flight level increased by ~67% (`FlightLevel` incr. from 600 to 1000). This is mostly a visual change, as aircraft and anti-air weapon ranges have been increased accordingly.
 	- (+) GDI SAM Launcher and Nod SAM Site target acquirement range increased from 10 to 15 cells. SAM missile range remains unchanged (15 cells).
 - (+) All aircraft and subterranean units can now move into shrouded areas
@@ -501,7 +527,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (+) Sight range increased from 2 to 7
 	- (+) Gains increased strength and speed when veteran
 	- (+) Gains increased firepower, sight, and radar invisibility when elite
-	- (+) Reload rate increased from 0.5 to 0.1
+	- (+) Reload delay decreased from 0.5 to 0.1
 	- (+) Max. missile speed increased from 30 to 40
 	- (+) Damage spread increased from 3 to 4
 - ORCA Bomber:
@@ -796,6 +822,7 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- (-) Cost reverted from 800 to 1000
 	- (-) Rate-of-turn decreased from 5 to 3
 - Banshee:
+	- (+) Reload delay decreased from 0.5 to 0.25
 	- (+) Now invisible to radar by default
 	- (+) Sight range increased from 2 to 6
 	- (+) Gains increased strength and speed when veteran
