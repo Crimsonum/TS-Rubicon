@@ -2,6 +2,8 @@
 ; If the update fails, any changes made according to this file are NOT reverted.
 
 [Rename]
+changelog.md=changelog.txt
+credits.md=credits.txt
 TiberianSun.exe=Rubicon.exe
 INI\day.ini=INI\Game Options\Time Day.ini
 INI\dusk.ini=INI\Game Options\Time Dusk.ini

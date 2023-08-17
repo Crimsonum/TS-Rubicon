@@ -48,6 +48,9 @@ Crewed=no
 [NAPOWR]
 Crewed=no
 
+[NASAM]
+Power=0
+
 [ORCATRAN]
 ROT=2
 Nominal=yes
@@ -185,7 +188,7 @@ Full=no
 Name=Real Transport 2
 Group=-1
 House=GDI2
-Script=081E9590
+Script=08720C40
 Whiner=no
 Droppod=no
 Suicide=no
@@ -209,7 +212,7 @@ VeteranLevel=1
 IsBaseDefense=no
 OnlyTargetHouseEnemy=no
 TransportsReturnOnUnload=no
-AreTeamMembersRecruitable=no
+AreTeamMembersRecruitable=yes
 
 [01000029]
 0=14,0
@@ -283,7 +286,7 @@ VeteranLevel=1
 IsBaseDefense=no
 OnlyTargetHouseEnemy=no
 TransportsReturnOnUnload=no
-AreTeamMembersRecruitable=no
+AreTeamMembersRecruitable=yes
 
 [01000043]
 0=3,50
@@ -1036,7 +1039,7 @@ VeteranLevel=1
 IsBaseDefense=no
 OnlyTargetHouseEnemy=no
 TransportsReturnOnUnload=no
-AreTeamMembersRecruitable=no
+AreTeamMembersRecruitable=yes
 
 [08E06E00]
 0=3,24
@@ -1199,7 +1202,7 @@ VeteranLevel=1
 IsBaseDefense=no
 OnlyTargetHouseEnemy=no
 TransportsReturnOnUnload=no
-AreTeamMembersRecruitable=no
+AreTeamMembersRecruitable=yes
 
 [09B182F0]
 Max=0
@@ -1768,7 +1771,7 @@ AreTeamMembersRecruitable=no
 084933B0=1,21,0,123,0,0,0,0,A
 086BED70=1,17,0,16,0,0,0,0,Q
 086C1080=1,17,0,17,0,0,0,0,R
-087FE7C0=1,14,0,4,0,0,0,0,A
+087FE7C0=1,56,0,5,0,0,0,0,A
 088610E0=2,17,0,8,0,0,0,0,I,17,0,13,0,0,0,0,N
 088E10F0=2,47,0,0,0,0,0,0,A,11,0,22,0,0,0,0,A
 088E19C0=3,46,0,0,0,0,0,0,A,11,0,20,0,0,0,0,A,20,0,1,0,0,0,0,A
@@ -1792,7 +1795,7 @@ AreTeamMembersRecruitable=no
 09B1DCD0=1,4,1,09B1FBD0,0,0,0,0,A
 09B1F030=1,32,0,0,0,0,0,0,A
 0A227CE0=2,56,0,2,0,0,0,0,A,21,0,127,0,0,0,0,A
-0A450480=3,9,0,1,0,0,0,0,A,22,2,087FE7C0,0,0,0,0,A,6,0,1,0,0,0,0,A
+0A450480=2,9,0,1,0,0,0,0,A,6,0,1,0,0,0,0,A
 0A4DD7A0=3,11,0,476,0,0,0,0,A,21,0,55,0,0,0,0,A,2,0,0,0,0,0,0,A
 0AA1DF80=3,2,0,0,0,0,0,0,A,21,0,121,0,0,0,0,A,11,0,477,0,0,0,0,A
 0AAC5520=2,56,0,1,0,0,0,0,A,21,0,124,0,0,0,0,A
@@ -1998,7 +2001,7 @@ PlayerControl=no
 084933B0=2,36,0,0,13,0,4
 086BED70=1,4,0,0
 086C1080=1,4,0,0
-087FE7C0=1,15,0,7
+087FE7C0=1,48,0,0
 088610E0=1,47,0,2
 088E10F0=1,47,0,46
 088E19C0=1,47,0,0
@@ -2022,7 +2025,7 @@ PlayerControl=no
 09B1DCD0=1,48,0,0
 09B1F030=1,44,0,11
 0A227CE0=1,11,0,1
-0A450480=1,48,0,0
+0A450480=2,17,0,0,36,0,5
 0A4DD7A0=1,48,0,0
 0AA1DF80=1,7,0,0
 0AAC5520=1,23,1,08BCFC40
@@ -3430,10 +3433,10 @@ DestroyableBridges=yes
 20=Neutral,NEGLAMP,256,63,51,0,None,1,0,1,0,0,None,None,None,0,0
 21=Neutral,NEGLAMP,256,61,16,0,None,1,0,1,0,0,None,None,None,0,0
 22=Neutral,NEGLAMP,256,29,80,0,None,1,0,1,0,0,None,None,None,0,0
-23=Nod2,NAPOWR,256,52,21,0,087FEA30,0,0,1,0,0,None,None,None,1,1
-24=Nod2,NAAPWR,256,54,18,0,087FEA30,1,0,1,0,0,None,None,None,0,0
-25=Nod,NAPOWR,256,63,26,0,None,0,0,1,0,0,None,None,None,1,0
-26=Nod,NAPOWR,256,67,26,0,None,0,0,1,0,0,None,None,None,1,0
+23=Nod,NAPOWR,256,64,29,0,087FEA30,0,0,1,0,0,None,None,None,1,1
+24=Nod,NAPOWR,256,67,29,0,087FEA30,0,0,1,0,0,None,None,None,1,1
+25=Nod,NAPOWR,256,63,26,0,087FEA30,0,0,1,0,0,None,None,None,1,0
+26=Nod,NAPOWR,256,67,26,0,087FEA30,0,0,1,0,0,None,None,None,1,0
 27=Nod,NAGATE_B,256,79,40,0,None,0,0,1,0,0,None,None,None,1,0
 28=Nod,NAWEAP,256,55,32,0,0A450190,1,0,1,0,0,None,None,None,0,0
 29=Nod,PROC,256,71,40,0,None,0,0,1,0,0,None,None,None,1,1
@@ -3487,8 +3490,6 @@ DestroyableBridges=yes
 1021923=Nod,GASILO,256,67,38,0,None,0,0,1,0,0,None,None,None,1,1
 1021926=Nod,GASILO,256,67,36,0,None,0,0,1,0,0,None,None,None,1,1
 1021929=Nod,GACNST,256,62,34,0,0A450190,0,0,1,0,0,None,None,None,1,1
-1021936=Nod,NAPOWR,256,67,29,0,None,0,0,1,0,0,None,None,None,1,1
-1021942=Nod,NAPOWR,256,64,29,0,None,0,0,1,0,0,None,None,None,1,1
 1021945=Nod,NAHAND,256,68,33,0,0A450190,0,0,1,0,0,None,None,None,1,1
 1021951=Nod,NARADR,256,73,31,0,None,0,0,1,0,0,None,None,None,1,1
 
@@ -3518,7 +3519,7 @@ DestroyableBridges=yes
 01000073=0,Ticks arrive 1,01000072
 07A76100=0,Oh shit SAMs 1 1,07A64DA0
 07AB1990=0,Nod AI Triggers 1,07B6F3C0
-07AB78E0=0,SAMs Gone 1,07AB6060
+07AB78E0=0,SAMs gone 1,07AB6060
 07ADE5C0=0,Transport 1 1,07ADF090
 07ADE6A0=0,Transport 2 1,07ADE520
 07AE28C0=0,Real Transports 1,07AE2B60
@@ -3526,10 +3527,10 @@ DestroyableBridges=yes
 07AE3250=0,Reveal SAM 3 1,07AE3890
 07AE3450=0,Loading Up 1 1,07AE3740
 07B00B10=0,Nod Patrols 1,07B03030
-08494EC0=0,sams gone 2 1,084933B0
+08494EC0=0,SAMs gone 2 1,084933B0
 086B0BF0=0,Reveal SAM 1 1,086BED70
 086C5CF0=0,Reveal SAM 2 1,086C1080
-087FEA30=0,Sell off power 1,087FE7C0
+087FEA30=1,Power out 1,087FE7C0
 08860A60=0,Reveal 2 1,088610E0
 088E1550=0,Lock input 1,088E19C0
 088E2F10=0,Unlock input 1,088E10F0
@@ -4029,7 +4030,7 @@ DestroyableBridges=yes
 01000062=GDI,<none>,Titans,0,1,1,0,0
 01000072=Nod,<none>,Ticks arrive,0,0,0,1,0
 07A64DA0=GDI2,<none>,Oh shit SAMs 1,0,1,1,1,0
-07AB6060=Nod2,<none>,SAMs Gone,0,1,1,1,0
+07AB6060=Nod2,<none>,SAMs gone,0,1,1,1,0
 07ADE520=GDI2,<none>,Transport 2,0,1,1,1,0
 07ADF090=GDI2,<none>,Transport 1,0,1,1,1,0
 07AE2B60=GDI,<none>,Real Transports,0,1,1,1,0
@@ -4038,10 +4039,10 @@ DestroyableBridges=yes
 07AE3890=GDI,<none>,Reveal SAM 3,0,1,1,1,0
 07B03030=Nod,<none>,Nod Patrols,0,1,1,1,0
 07B6F3C0=Nod,<none>,Nod AI Triggers,0,1,1,1,0
-084933B0=GDI,<none>,sams gone 2,0,1,1,1,0
+084933B0=Nod2,<none>,SAMs gone 2,0,1,1,1,0
 086BED70=GDI,<none>,Reveal SAM 1,0,1,1,1,0
 086C1080=GDI,<none>,Reveal SAM 2,0,1,1,1,0
-087FE7C0=Nod2,<none>,Sell off power,0,1,1,1,0
+087FE7C0=Nod,<none>,Power out,0,1,1,1,0
 088610E0=GDI,<none>,Reveal 2,0,1,1,1,0
 088E10F0=GDI,<none>,Unlock input,0,1,1,1,0
 088E19C0=GDI,<none>,Lock input,0,1,1,1,0
@@ -4098,6 +4099,7 @@ DestroyableBridges=yes
 2=NOD Gone,0
 3=build text,0
 4=Lasers,0
+5=Power out,0
 
 [Waypoints]
 0=111056

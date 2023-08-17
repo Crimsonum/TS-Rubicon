@@ -5,6 +5,42 @@ All changes and assets were made by Crimsonum unless stated otherwise. Tools and
 For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/changelog.txt).
 
 
+## Developer Version 0.2.2:
+
+- Interceptor sight increased from 6 to 7
+- Medium AI now has a 20% cost reduction and no build slowdown in multiplayer
+- Added progression to the tutorial campaign
+- In tutorial mission 2, visceroids are no longer allied to the player
+- In GDI mission 1, added a bonus to the bottom-right corner
+- GDI mission 2:
+	- The ending sequence should no longer lock up if the player has units blocking the evac transports
+	- Fixed a trigger setup with the Nod SAM Sites and power plants
+- GDI mission 3 B:
+	- The player is now warned if the train or the train station is under attack
+	- Added a text confirmation for when the train station is captured
+- GDI mission 4:
+	- Added better difficulty scaling to Nod attacks
+	- Nod attacks are now more varied
+	- If the captured train from mission 3 A/B survives, the player is rewarded with further reinforcements
+	- Fixed a group mismatch on one of the Nod infantry attacks
+	- Fixed the Nod artillery acquiring wrong targets
+- Nod mission 2:
+	- The enemy now sells their remaining buildings only after they've lost all factories and power/laser turrets
+	- Removed the bonus crate from the civilian settlement
+- Tweaked map editor interface
+- Disabled a patch that caused Nod to use GDI sidebar & EVA when loading a save (`SidebarHack`)
+- Disabled Advanced game mode in preparation for alpha release
+- Updated CnC-DDraw to version 5.6.0.0
+- Converted this changelog and the credits file from Markdown (.md) to plain text (.txt) format for better support
+- Implemented the latest executable patches:
+	- Human and medium AI players now use separate difficulty settings
+	- Game speed options are now the same across all game modes
+	- Bonus crates can now be preplaced on multiplayer maps
+	- Fixed a bug where the autosave timer was not reset on scenario restart
+	- Fixed AI script action 4 to use TS map grid sizes
+	  and more.
+
+
 ## Developer Version 0.2.1:
 
 - GDI mission 3 B:
