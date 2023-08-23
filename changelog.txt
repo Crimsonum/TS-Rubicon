@@ -1,8 +1,28 @@
 # Tiberian Sun: Rubicon Changelog
 
-All changes and assets were made by Crimsonum unless stated otherwise. Tools and client features were created by their respective developers. See the [credits](https://github.com/Legion-13/TS-Rubicon/blob/master/credits.md) for more information.
+All changes and assets were made by Crimsonum unless stated otherwise. Tools and client features were created by their respective developers. See the [credits](https://github.com/Legion-13/TS-Rubicon/blob/master/credits.txt) for more information.
 
 For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/changelog.txt).
+
+
+## Developer Version 0.2.3:
+
+- Fixed an issue where the game would crash during mission progression after loading a save, or when chain-saving in multiplayer
+- Fixed an issue where the player had Nod sidebar and briefing graphics in the tutorial missions
+- Fixed Nod Stealth Tank to use the correct warhead when engaging aerial targets
+- Fixed game speed labels in the skirmish lobby
+- Added new deploy graphics for Nod Tick Tank and Artillery
+- Added a sound effect to bullets ricocheting off of a blown up ammo crate
+- Most explosions now eject dust
+- Nod mission 3 B:
+	- Fixed valley patrol behavior
+	- Fixed a couple of Hassan's units just standing there when their base got attacked
+- Updated [4] Grand Canyon
+- Updated ambient lighting in [4] Terrace
+- Moved old, not-yet-updated TS/FS maps to a "Legacy" category
+- Updated default tutorial descriptions
+- Updated credits & readme file
+- Optimized the Act I missions map file structures
 
 
 ## Developer Version 0.2.2:
@@ -1362,7 +1382,6 @@ For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](
 	- Viniferum fields now regenerate in the middle
 	- Improved ambiance
 - Tiers of Sorrow:
-	- Renamed Tiers of Regret
 	- Redesigned the middle area, and redistributed the Veinhole Monsters
 	- Added Aboreum formations to Viniferum fields
 	- Improved ambiance

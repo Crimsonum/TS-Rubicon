@@ -9,7 +9,12 @@ A modification of Command & Conquer:tm: Tiberian Sun:tm: based on the [CnCNet Ti
 - Powered by [Vinifera](https://github.com/Vinifera-Developers/Vinifera), an open-source community project extending the Tiberian Sun game engine.
 - Enhanced with community assets, tools, and other contributions.
 
-See the [credits](https://github.com/Legion-13/TS-Rubicon/blob/master/credits.md) for detailed information.
+See the [credits](https://github.com/Legion-13/TS-Rubicon/blob/master/credits.txt) for detailed information.
+
+## Links
+- [Discord](https://discord.gg/hbxupZbmtR)
+- [Mod DB](https://www.moddb.com/mods/tiberian-sun-rubicon)
+- [GitHub](https://github.com/Legion-13/TS-Rubicon)
 
 ## Disclaimer
 Command & Conquer, Tiberian Sun, and Command & Conquer Tiberian Sun are trademarks of Electronic Arts Inc. (EA)

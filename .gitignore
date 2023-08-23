@@ -73,3 +73,7 @@ ReShade_GAME.log
 d3d9.dll
 dxgi.dll
 opengl32.dll
+/StandaloneIniPreprocessor.exe
+/-SPAWN.bat
+/game (side hacks).exe
+/game (no vinifera).exe

@@ -1,21 +1,35 @@
 # Credits
-**Tiberian Sun: Rubicon**
 
-| Role | Who | Contributions |
-| --- | --- | --- |
-| Developer | Crimsonum | Founder, lead developer |
-| Developer | Demo | Lead voxel artist, misc. artist |
-| Contributor | Rampastring, Bittah Commander, CCHyper, & co.<br/>See [TSC credits](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/credits.txt) for more information | [CnCNet Tiberian Sun client package](https://github.com/CnCNet/cncnet-ts-client-package) (TSC) |
-| Contributor | CCHyper, tomsons26, Rampastring | [Vinifera](https://github.com/Vinifera-Developers/Vinifera) engine extension |
-| Contributor | Starkku, E1 Elite | [MapTool](https://github.com/Starkku/MapTool) |
-| Contributor | Q45 | Tunnel Drawer |
-| Contributor | crosire & co. | ReShade |
-| Contributor | 4SG | TS "valve" graphics |
-| Contributor | areaSZ | Titan graphics |
-| Contributor | Bittah Commander | Tech Array graphics |
-| Contributor | Henskelion | Several high-quality sound effects |
-| Contributor | Lin Kuei Ominae | Mammoth Mk. II graphics |
-| Contributor | Stingerr | Tiberian Sun Mk. II assets |
+Tiberian Sun: Rubicon
+
+- Created and developed by Legion 13, a group of modders sharing a common vision and passion for Tiberian Sun. The group consists of:
+
+	Crimsonum     Founder, lead developer, lead graphics artist, mapper
+	Demo          Lead voxel artist, additional in-game art
+	Tiberius      Tester, mapper
+
+  https://github.com/Legion-13
+  https://www.moddb.com/company/legion-13
+ 
+- Built on the CnCNet Tiberian Sun client package (TSC), itself based on the XNA CnCNet Client.
+  https://github.com/CnCNet/cncnet-ts-client-package
+  https://github.com/CnCNet/xna-cncnet-client
+
+- Powered by Vinifera, an open-source community project extending the Tiberian Sun game engine.
+  https://github.com/Vinifera-Developers/Vinifera
+
+- Enhanced with the following community assets, tools, and other contributions:
+
+	MapTool                      Starkku, E1 Elite
+	Tunnel Drawer                Q45
+	ReShade                      crosire & co.
+	Tiberian Sun Mk. II assets   Stingerr
+	TS "valve" graphics          4SG
+	Titan graphics               areaSZ
+	Tech Array graphics          Bittah Commander
+	Mammoth Mk. II graphics      Lin Kuei Ominae
+	Several high-quality sfx     Henskelion
+	Bullet sound effects         SoundEffectsFactory
 
 Special thanks to all the wonderful people and organizations that have helped us on this journey:
 - Apollo

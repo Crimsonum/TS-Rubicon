@@ -3822,9 +3822,9 @@ PlayerControl=yes
 2742=AAEQAA
 
 [Lighting]
-Red=0.71
-Blue=1.42
-Green=0.81
+Red=1.39
+Blue=0.71
+Green=0.91
 Level=0.05
 Ground=0.025
 IonRed=1.14

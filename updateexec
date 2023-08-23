@@ -62,7 +62,7 @@ Resources\TS Theme\MainMenu\mainmenuebg.png
 ;OLD_FOLDER_PATH=NEW_FOLDER_PATH
 
 [ForceDeleteFolder]
-;FOLDER_PATH
+Cameos\
 
 [DeleteFolderIfEmpty]
 ;FOLDER_PATH
