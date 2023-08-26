@@ -5,7 +5,14 @@ All changes and assets were made by Crimsonum unless stated otherwise. Tools and
 For changes made to the CnCNet TS client package (TSC), see the [TSC changelog](https://github.com/CnCNet/cncnet-ts-client-package/blob/master/changelog.txt).
 
 
-## Developer Version 0.2.4:
+## Developer Version 0.2.5 (Public Alpha 1.1):
+
+- Fixed an oversight that caused a music track to be missing from the ingame jukebox, which in turn induced a crash in GDI mission 3 A when the game tried to fetch that track.
+- Fixed an issue with the Map Editor help menu
+- Fixed the missing Custom maps folder
+
+
+## Developer Version 0.2.4 (Public Alpha 1.0):
 
 - Reverted default GDI Juggernaut and Nod Artillery min. and max. ranges to original values
 - Finished Dropship Bay graphics (except the buildup is a placeholder)
