@@ -4,7 +4,6 @@
 ;OLD_FILE_PATH=NEW_FILE_PATH
 
 [Delete]
-changelog.txt
 INI\battlefs.ini
 INI\ion.ini
 INI\MPMaps.pkt
